@@ -2,10 +2,10 @@ homeassistant:
   # Name of the location where Home Assistant is running
   name: Home
   # Location required to calculate the time the sun rises and sets
-  latitude: 51.980654
-  longitude: 5.910293
+  latitude: !secret home_lat
+  longitude: !secret home_long 
   # Impacts weather/sunrise data (altitude above sea level in meters)
-  elevation: 16
+  elevation: !secret home_el
   # metric for Metric, imperial for Imperial
   unit_system: metric
   # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
@@ -76,10 +76,10 @@ panel_iframe:
     url: http://192.168.2.10:3218
   pihole:
     title: PiHole
-    url: http://192.168.2.10:4865
+    url: !secret pi_hole_url 
     
 
 http:
-  base_url: https://duchs.duckdns.org:8123
+  base_url: !secret base_url
   ssl_certificate: /ssl/fullchain.pem
   ssl_key: /ssl/privkey.pem
