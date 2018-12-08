@@ -74,7 +74,5 @@ script: !include scripts.yaml
 panel_iframe:
   pihole:
     title: PiHole
-    icon: 
-      mdi: shield-home
     url: !secret pi_hole_url 
     
