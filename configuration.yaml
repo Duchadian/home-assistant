@@ -23,8 +23,10 @@ frontend:
 config:
 
 # Uncomment this if you are using SSL/TLS, running in Docker container, etc.
-# http:
-#   base_url: example.duckdns.org:8123
+http:
+  base_url: !secret base_url
+  ssl_certificate: /ssl/fullchain.pem
+  ssl_key: /ssl/privkey.pem
 
 # Checks for available updates
 # Note: This component will send some information about your system to
@@ -70,16 +72,7 @@ automation: !include automations.yaml
 script: !include scripts.yaml
 
 panel_iframe:
-  configurator:
-    title: Configurator
-    icon: mdi:wrench
-    url: http://192.168.2.10:3218
   pihole:
     title: PiHole
     url: !secret pi_hole_url 
     
-
-http:
-  base_url: !secret base_url
-  ssl_certificate: /ssl/fullchain.pem
-  ssl_key: /ssl/privkey.pem
