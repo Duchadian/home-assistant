@@ -75,4 +75,5 @@ panel_iframe:
   pihole:
     title: PiHole
     url: !secret pi_hole_url 
+    icon: mdi:shield-home-outline
     
