@@ -63,6 +63,7 @@ sensor:
   # PiHole
   - platform: pi_hole
     host: !secret pi_hole_local
+    ssl: true
     monitored_conditions:
       - ads_blocked_today
       - dns_queries_today
