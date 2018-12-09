@@ -60,6 +60,14 @@ sensor:
   # Weather prediction
   - platform: yr
 
+  # PiHole
+  - platform: pi_hole
+    host: !secret pi_hole_local
+    monitored_conditions:
+      - ads_blocked_today
+      - dns_queries_today
+      - unique_clients
+
 # Text to speech
 tts:
   - platform: google
