@@ -71,6 +71,15 @@ sensor:
       - dns_queries_today
       - unique_clients
 
+  - platform: speedtest
+    minute:
+      - 0
+      - 30
+    monitored_conditions:
+      - ping
+      - download
+      - upload
+
 # Text to speech
 tts:
   - platform: google
