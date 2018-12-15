@@ -41,7 +41,6 @@ updater:
 discovery:
 
 # Add discovery of IOS
-ios:
 
 # Allows you to issue voice commands from the frontend in enabled browsers
 conversation:
@@ -68,6 +67,7 @@ sensor:
     host: !secret pi_hole_local
     monitored_conditions:
       - ads_blocked_today
+      - ads_percentage_today
       - dns_queries_today
       - unique_clients
 
