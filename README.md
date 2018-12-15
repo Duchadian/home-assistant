@@ -6,3 +6,5 @@ This is the configuration for my homeassistant. The configuration was made for a
 ## TODO
 
 - theme
+- convert to lovelace ui
+- implement chromecast control scripts
