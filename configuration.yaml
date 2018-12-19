@@ -69,7 +69,6 @@ sensor:
       - ads_blocked_today
       - ads_percentage_today
       - dns_queries_today
-      - unique_clients
 
 # Text to speech
 tts:
