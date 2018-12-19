@@ -85,4 +85,5 @@ script: !include scripts.yaml
     
 media_player:
   - platform: webostv 
+    name: TV 
     host: !secret tv_url
