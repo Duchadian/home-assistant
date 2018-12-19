@@ -87,3 +87,8 @@ media_player:
   - platform: webostv 
     name: TV 
     host: !secret tv_url
+    timeout: 5
+    turn_on_action:
+      service: wake_on_lan.send_magic_packet
+      data:
+        mac: !secret tv_mac
