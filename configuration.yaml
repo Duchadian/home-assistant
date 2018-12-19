@@ -83,3 +83,5 @@ script: !include scripts.yaml
 
 # panel_iframe:
     
+media_player:
+  - platform: webostv
