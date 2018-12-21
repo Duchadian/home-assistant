@@ -61,7 +61,13 @@ sun:
 # Sensors
 sensor:
   # Weather prediction
-  - platform: yr
+  - platform: darksky
+    api_key: !secret darksky_key 
+    forecast: 
+      - 0
+    monitored_conditions:
+      - hourly_summary
+      - daily_summary
 
   # PiHole
   - platform: pi_hole
@@ -70,6 +76,8 @@ sensor:
       - ads_blocked_today
       - ads_percentage_today
       - dns_queries_today
+
+
 
 # Text to speech
 tts:
