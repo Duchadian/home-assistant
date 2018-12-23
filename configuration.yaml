@@ -14,7 +14,7 @@ homeassistant:
   customize: !include customize.yaml
 
 # Show links to resources in log and frontend
-introduction:
+# introduction:
 
 # Enables the frontend
 frontend:
@@ -41,8 +41,6 @@ updater:
 # Discover some devices automatically
 discovery:
 
-# Add discovery of IOS
-
 # Allows you to issue voice commands from the frontend in enabled browsers
 conversation:
 
@@ -58,17 +56,13 @@ map:
 # Track the sun
 sun:
 
+# Weather platform
+weather: 
+  - platform: darksky
+    api_key: !secret darksky_key
+
 # Sensors
 sensor:
-  # Weather prediction
-  - platform: darksky
-    api_key: !secret darksky_key 
-    forecast: 
-      - 0
-    monitored_conditions:
-      - hourly_summary
-      - daily_summary
-
   # PiHole
   - platform: pi_hole
     host: !secret pi_hole_local
