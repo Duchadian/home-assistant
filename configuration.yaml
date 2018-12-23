@@ -20,6 +20,10 @@ homeassistant:
 frontend:
   themes: !include themes.yaml
 
+# Enable https:
+http:
+  api_password: !secret api_key
+  
 # Enables configuration UI
 config:
 
