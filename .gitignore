@@ -5,4 +5,7 @@ home-assistant.log
 home-assistant_v2.db
 secrets.yaml
 webostv.conf
+.ios.conf
 known_devices.yaml
+tts
+
