@@ -8,4 +8,5 @@ webostv.conf
 .ios.conf
 known_devices.yaml
 tts
+notebooks
 
