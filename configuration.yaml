@@ -75,8 +75,20 @@ sensor:
       - ads_blocked_today
       - ads_percentage_today
       - dns_queries_today
-
-
+  
+  # Monitor hassio host
+  - platform: systemmonitor
+    resources:
+      - type: memory_use_percent
+      - type: swap_use_percent
+      - type: disk_use_percent
+        arg: /
+      - type: load_1m
+      - type: processor_use
+      - type: network_in
+        arg: enp2s0
+      - type: network_out
+        arg: enp2s0
 
 # Text to speech
 tts:
