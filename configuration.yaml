@@ -90,6 +90,11 @@ sensor:
       - type: network_out
         arg: enp2s0
 
+  # postnl
+  - platform: postnl
+    username: !secret postnl_username
+    password: !secret postnl_password
+
 # Text to speech
 tts:
   - platform: google
@@ -101,8 +106,7 @@ group: !include groups.yaml
 automation: !include automations.yaml
 script: !include scripts.yaml
 
-# panel_iframe:
-    
+## all media players
 media_player:
   - platform: webostv 
     name: TV 
