@@ -102,6 +102,10 @@ tts:
 # Cloud
 cloud:
 
+
+wake_on_lan:
+system_health:
+
 group: !include groups.yaml
 automation: !include automations.yaml
 script: !include scripts.yaml
@@ -121,5 +125,6 @@ media_player:
         - "YouTube"
         - "Netflix"
         - "Spotify Music - Luister gratis op LG TV"
-        - "HDMI 1"
-        - "HDMI 3"
+        - "Streambox"
+        - "Decoder"
+        - "PC"
