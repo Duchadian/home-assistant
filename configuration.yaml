@@ -47,10 +47,10 @@ updater:
 ios:
 
 # Allows you to issue voice commands from the frontend in enabled browsers
-conversation:
+# conversation:
 
 # Enables support for tracking state changes over time
-history:
+# history:
 
 # View all events in a logbook
 logbook:
@@ -80,27 +80,39 @@ sensor:
   - platform: systemmonitor
     resources:
       - type: memory_use_percent
-      - type: swap_use_percent
       - type: disk_use_percent
         arg: /
       - type: load_1m
-      - type: processor_use
+      - type: load_15m
       - type: network_in
         arg: enp2s0
       - type: network_out
         arg: enp2s0
 
-  # postnl
+  # Set Chromecast time state
+  - platform: template
+    sensors:
+      cast_max_time:
+        friendly_name: "Cast end time"
+        value_template: >
+          {% if is_state('media_player.huiskamer', 'playing') %}
+            {{ state_attr('media_player.huiskamer', 'media_duration') }}
+          {% else %}
+            0
+          {% endif %}
+        unit_of_measurement: 'sec'
+
+  # PostNL
   - platform: postnl
     username: !secret postnl_username
     password: !secret postnl_password
 
 # Text to speech
-tts:
+# tts:
   - platform: google
 
 # Cloud
-cloud:
+# cloud:
 
 
 wake_on_lan:
@@ -122,9 +134,9 @@ media_player:
         mac: !secret tv_mac
     customize:
       sources:
+        - "Streambox"
+        - "Decoder"
+        - "Pc"
         - "YouTube"
         - "Netflix"
         - "Spotify Music - Luister gratis op LG TV"
-        - "Streambox"
-        - "Decoder"
-        - "PC"
