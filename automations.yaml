@@ -23,6 +23,15 @@
           {% set from_seconds = (value.split(':')[2] | int) * 1 %}
           {% set seconds = from_hours + from_minutes + from_seconds %}
           "{{ seconds }}"
+    - service: media_player.media_seek
+      data_template:
+        entity_id: media_player.huiskamer
+        seek_position: >
+          {% set value = states('input_text.chromecast_pos_text') %}
+          {% set from_hours = (value.split(':')[0] | int) * 360 %}
+          {% set from_minutes = (value.split(':')[1] | int) * 60 %}
+          {% set from_seconds = (value.split(':')[2] | int) * 1 %}
+          {% set seconds = from_hours + from_minutes + from_seconds %}
 
 
 #- alias: Set input slider position
