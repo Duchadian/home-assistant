@@ -32,7 +32,7 @@
           {% set from_minutes = (value.split(':')[1] | int) * 60 %}
           {% set from_seconds = (value.split(':')[2] | int) * 1 %}
           {% set seconds = from_hours + from_minutes + from_seconds %}
-
+          "{{ seconds }}"
 
 #- alias: Set input slider position
 #  trigger:
