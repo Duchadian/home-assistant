@@ -25,6 +25,7 @@ config:
 
 # Enable hassio
 hassio:
+
 # Uncomment this if you are using SSL/TLS, running in Docker container, etc.
 http:
   base_url: !secret base_url
@@ -106,6 +107,19 @@ sensor:
   - platform: postnl
     username: !secret postnl_username
     password: !secret postnl_password
+
+# Set input number 
+input_number:
+  chromecast_pos:
+    name: Current position
+    min: 0
+    max: 25000
+    mode: 'box'
+
+input_text:
+  chromecast_pos_text:
+    name: Current position in text
+    pattern: "^(0?[0-5]):([0-5]?[0-9]):([0-5]?[0-9])$" 
 
 # Text to speech
 # tts:
