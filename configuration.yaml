@@ -102,6 +102,20 @@ sensor:
             0
           {% endif %}
         unit_of_measurement: 'sec'
+  
+  - platform: template
+    sensors:
+      cast_time_now:
+        friendly_name: "Current cast position"
+        value_template: >
+          {% if is_state('media_player.huiskamer', 'playing') %}
+            {{ state_attr('media_player.huiskamer', 'media_position') }}
+          {% elif is_state('media_player.huiskamer', 'paused') %}
+            {{ state_attr('media_player.huiskamer', 'media_position') }}
+          {% else %}
+            0
+          {% endif %}
+        unit_of_measurement: 'sec'
 
   # PostNL
   - platform: postnl
