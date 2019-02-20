@@ -69,6 +69,11 @@ weather:
 
 # Sensors
 sensor:
+  - platform: twitch
+    client_id: !secret twitch_client
+    channels:
+      - criticalrole 
+
   # PiHole
   - platform: pi_hole
     host: !secret pi_hole_local
@@ -109,13 +114,13 @@ sensor:
         friendly_name: "Current cast position"
         value_template: >
           {% if is_state('media_player.huiskamer', 'playing') %}
-            {{ state_attr('media_player.huiskamer', 'media_position') }}
+            {% set pos_sec = state_attr('media_player.huiskamer', 'media_position') %}
           {% elif is_state('media_player.huiskamer', 'paused') %}
-            {{ state_attr('media_player.huiskamer', 'media_position') }}
+            {% set pos_sec = state_attr('media_player.huiskamer', 'media_position') %}
           {% else %}
-            0
+            {% set pos_sec = 0 %}
           {% endif %}
-        unit_of_measurement: 'sec'
+          {{ pos_sec | timestamp_custom("%H:%M:%S", 0) }}
 
   # PostNL
   - platform: postnl
