@@ -95,32 +95,32 @@ sensor:
       - type: network_out
         arg: enp2s0
 
-  # Set Chromecast time state
-  - platform: template
-    sensors:
-      cast_max_time:
-        friendly_name: "Cast end time"
-        value_template: >
-          {% if is_state('media_player.huiskamer', 'playing') %}
-            {{ state_attr('media_player.huiskamer', 'media_duration') }}
-          {% else %}
-            0
-          {% endif %}
-        unit_of_measurement: 'sec'
+  # # Set Chromecast time state
+  # - platform: template
+  #   sensors:
+  #     cast_max_time:
+  #       friendly_name: "Cast end time"
+  #       value_template: >
+  #         {% if is_state('media_player.huiskamer', 'playing') %}
+  #           {{ state_attr('media_player.huiskamer', 'media_duration') }}
+  #         {% else %}
+  #           0
+  #         {% endif %}
+  #       unit_of_measurement: 'sec'
   
-  - platform: template
-    sensors:
-      cast_time_now:
-        friendly_name: "Current cast position"
-        value_template: >
-          {% if is_state('media_player.huiskamer', 'playing') %}
-            {% set pos_sec = state_attr('media_player.huiskamer', 'media_position') %}
-          {% elif is_state('media_player.huiskamer', 'paused') %}
-            {% set pos_sec = state_attr('media_player.huiskamer', 'media_position') %}
-          {% else %}
-            {% set pos_sec = 0 %}
-          {% endif %}
-          {{ pos_sec | timestamp_custom("%H:%M:%S", 0) }}
+  # - platform: template
+  #   sensors:
+  #     cast_time_now:
+  #       friendly_name: "Current cast position"
+  #       value_template: >
+  #         {% if is_state('media_player.huiskamer', 'playing') %}
+  #           {% set pos_sec = state_attr('media_player.huiskamer', 'media_position') %}
+  #         {% elif is_state('media_player.huiskamer', 'paused') %}
+  #           {% set pos_sec = state_attr('media_player.huiskamer', 'media_position') %}
+  #         {% else %}
+  #           {% set pos_sec = 0 %}
+  #         {% endif %}
+  #         {{ pos_sec | timestamp_custom("%H:%M:%S", 0) }}
 
   # PostNL
   - platform: postnl
@@ -173,3 +173,11 @@ media_player:
         - "YouTube"
         - "Netflix"
         - "Spotify Music - Luister gratis op LG TV"
+
+panel_iframe:
+  vscode:
+    title: Visual Studio Code
+    icon: mdi:visual-studio-code
+    url: !secret vs_url
+
+python_script:

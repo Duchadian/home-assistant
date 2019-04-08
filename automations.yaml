@@ -1,37 +1,27 @@
-- alias: Set chromecast position
-  trigger:
-    platform: state
-    entity_id: input_number.chromecast_pos
-  action:
-    service: media_player.media_seek
-    data_template:
-      entity_id: media_player.huiskamer
-      seek_position: '{{ trigger.to_state.state }}'
+# - alias: Set chromecast position
+#   trigger:
+#     platform: state
+#     entity_id: input_number.chromecast_pos
+#   action:
+#     service: media_player.media_seek
+#     data_template:
+#       entity_id: media_player.huiskamer
+#       seek_position: '{{ trigger.to_state.state }}'
 
-- alias: Set text to number
-  trigger:
-    platform: state
-    entity_id: input_text.chromecast_pos_text
-  action:
-#    - service: persistent_notification.create
-#      data_template:
-#        title: Chromecast text position entered
-#        message: >
-#          {% set value = states('input_text.chromecast_pos_text') %}
-#          {% set from_hours = (value.split(':')[0] | int) * 3600 %}
-#          {% set from_minutes = (value.split(':')[1] | int) * 60 %}
-#          {% set from_seconds = (value.split(':')[2] | int) * 1 %}
-#          {% set seconds = from_hours + from_minutes + from_seconds %}
-#          {{ seconds }}
-    - service: media_player.media_seek
-      data_template:
-        entity_id: media_player.huiskamer
-        seek_position: >
-          {% set value = states('input_text.chromecast_pos_text') %}
-          {% set from_hours = (value.split(':')[0] | int) * 3600 %}
-          {% set from_minutes = (value.split(':')[1] | int) * 60 %}
-          {% set from_seconds = (value.split(':')[2] | int) * 1 %}
-          {% set seconds = from_hours + from_minutes + from_seconds %}
-          {{ seconds }}
+# - alias: Set text to number
+#   trigger:
+#     platform: state
+#     entity_id: input_text.chromecast_pos_text
+#   action:
+#     - service: media_player.media_seek
+#       data_template:
+#         entity_id: media_player.huiskamer
+#         seek_position: >
+#           {% set value = states('input_text.chromecast_pos_text') %}
+#           {% set from_hours = (value.split(':')[0] | int) * 3600 %}
+#           {% set from_minutes = (value.split(':')[1] | int) * 60 %}
+#           {% set from_seconds = (value.split(':')[2] | int) * 1 %}
+#           {% set seconds = from_hours + from_minutes + from_seconds %}
+#           {{ seconds }}
 
     
