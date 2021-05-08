@@ -2,10 +2,10 @@ homeassistant:
   # Name of the location where Home Assistant is running
   name: Home
   # Location required to calculate the time the sun rises and sets
-  latitude: !secret home_lat
-  longitude: !secret home_long 
+  #  latitude: !secret home_lat
+  #  longitude: !secret home_long
   # Impacts weather/sunrise data (altitude above sea level in meters)
-  elevation: !secret home_el
+  #  elevation: !secret home_el
   # metric for Metric, imperial for Imperial
   unit_system: metric
   # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
@@ -13,171 +13,77 @@ homeassistant:
   # Customization file
   customize: !include customize.yaml
 
-# Show links to resources in log and frontend
-# introduction:
-
-# Enables the frontend
-frontend:
-  themes: !include themes.yaml
-
-# Enables configuration UI
-config:
-
-# Enable hassio
-hassio:
+# Configure a default setup of Home Assistant (frontend, api, etc)
+default_config:
+shopping_list:
 
 # Uncomment this if you are using SSL/TLS, running in Docker container, etc.
-http:
-  base_url: !secret base_url
-  api_password: !secret api_password
-  ssl_certificate: /ssl/fullchain.pem
-  ssl_key: /ssl/privkey.pem
-
-# Checks for available updates
-# Note: This component will send some information about your system to
-# the developers to assist with development of Home Assistant.
-# For more information, please see:
-# https://home-assistant.io/blog/2016/10/25/explaining-the-updater/
-updater:
-  # Optional, allows Home Assistant developers to focus on popular components.
-  # include_used_components: true
+#http:
+#  base_url: 192.168.178.73:8123
+#  ssl_certificate: /ssl/fullchain.pem
+#  ssl_key: /ssl/privkey.pem
 
 # Discover some devices automatically
-# discovery:
-# Keep ios active
-ios:
-
-# Allows you to issue voice commands from the frontend in enabled browsers
-# conversation:
-
-# Enables support for tracking state changes over time
-# history:
-
-# View all events in a logbook
-logbook:
-
-# Enables a map showing the location of tracked devices
-map:
-
-# Track the sun
-sun:
-
-# Weather platform
-weather: 
-  - platform: darksky
-    api_key: !secret darksky_key
+discovery:
 
 # Sensors
 sensor:
-  - platform: twitch
-    client_id: !secret twitch_client
-    channels:
-      - criticalrole 
-
-  # # PiHole
-  # - platform: pi_hole
-  #   host: !secret pi_hole_local
-  #   monitored_conditions:
-  #     - ads_blocked_today
-  #     - ads_percentage_today
-  #     - dns_queries_today
-  
-  # Monitor hassio host
   - platform: systemmonitor
     resources:
-      - type: memory_use_percent
       - type: disk_use_percent
         arg: /
-      - type: load_1m
       - type: load_15m
-      - type: network_in
-        arg: enp2s0
-      - type: network_out
-        arg: enp2s0
-
-  # # Set Chromecast time state
-  # - platform: template
-  #   sensors:
-  #     cast_max_time:
-  #       friendly_name: "Cast end time"
-  #       value_template: >
-  #         {% if is_state('media_player.huiskamer', 'playing') %}
-  #           {{ state_attr('media_player.huiskamer', 'media_duration') }}
-  #         {% else %}
-  #           0
-  #         {% endif %}
-  #       unit_of_measurement: 'sec'
-  
-  # - platform: template
-  #   sensors:
-  #     cast_time_now:
-  #       friendly_name: "Current cast position"
-  #       value_template: >
-  #         {% if is_state('media_player.huiskamer', 'playing') %}
-  #           {% set pos_sec = state_attr('media_player.huiskamer', 'media_position') %}
-  #         {% elif is_state('media_player.huiskamer', 'paused') %}
-  #           {% set pos_sec = state_attr('media_player.huiskamer', 'media_position') %}
-  #         {% else %}
-  #           {% set pos_sec = 0 %}
-  #         {% endif %}
-  #         {{ pos_sec | timestamp_custom("%H:%M:%S", 0) }}
-
-  # PostNL
-  - platform: postnl
-    username: !secret postnl_username
-    password: !secret postnl_password
-
-# Set input number 
-# input_number:
-#   chromecast_pos:
-#     name: Current position
-#     min: 0
-#     max: 25000
-#     mode: 'box'
-
-# input_text:
-#   chromecast_pos_text:
-#     name: Current position in text
-#     pattern: "^(0?[0-5]):([0-5]?[0-9]):([0-5]?[0-9])$" 
-
-# Text to speech
-# tts:
-#  - platform: google
-
-# Cloud
-# cloud:
-
+  - platform: afvalwijzer
+    provider: mijnafvalwijzer
+    postal_code: !secret postal_code
+    street_number: !secret street_number
 
 wake_on_lan:
 system_health:
+media_extractor:
+  default_query: best
 
 group: !include groups.yaml
 automation: !include automations.yaml
 script: !include scripts.yaml
 
-## all media players
-media_player:
-  - platform: webostv 
-    name: TV 
-    host: !secret tv_url
-    timeout: 5
-    turn_on_action:
-      service: wake_on_lan.send_magic_packet
-      data:
-        mac: !secret tv_mac
-    customize:
-      sources:
-        - "Streambox"
-        - "Decoder"
-        - "Pc"
-        - "YouTube"
-        - "Netflix"
-        - "Spotify Music - Luister gratis op LG TV"
+input_boolean:
+  waste_moved:
+    name: Waste has been moved
+    initial: 'off'
+    icon: mdi:delete-empty
 
-panel_iframe:
-  vscode:
-    title: Visual Studio Code
-    icon: mdi:visual-studio-code
-    url: !secret vs_url
 
-python_script:
+webostv:
+  name: TV
+  host: !secret tv_url
+  turn_on_action:
+    service: wake_on_lan.send_magic_packet
+    data:
+      mac: !secret tv_mac
+  customize:
+    sources:
+      - "Streambox"
+      - "Decoder"
+      - "Pc"
+      - "YouTube"
+      - "Netflix"
+      - "Spotify: muziek en podcasts"
+      - "Amazon Prime Video"
+      - "Disney+"
+
+matrix:
+  homeserver: !secret matrix_homeserver
+  username: !secret matrix_username
+  password: !secret matrix_password
+  rooms:
+    - !secret matrix_home
+    - !secret matrix_test
+  commands:
+    - word: hassiotest
+      name: hassiotest
+  
+notify:
+  - name: matrix_home
+    platform: matrix
+    default_room: !secret matrix_home
