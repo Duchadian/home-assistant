@@ -3,7 +3,7 @@ secrets.yaml
 **pycache**
 *.db
 .storage/
-.HAVERSION
+.HA_VERSION
 .matrix.conf
 webostv.conf
 .shopping_list.json
