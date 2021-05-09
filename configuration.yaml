@@ -77,13 +77,15 @@ matrix:
   username: !secret matrix_username
   password: !secret matrix_password
   rooms:
-    - !secret matrix_home
-    - !secret matrix_test
+    - !secret matrix_home_room
+    - !secret matrix_test_room
   commands:
     - word: hassiotest
       name: hassiotest
+    - word: sl
+      name: get_shopping_list
   
 notify:
   - name: matrix_home
     platform: matrix
-    default_room: !secret matrix_home
+    default_room: !secret matrix_home_room
