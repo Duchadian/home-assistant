@@ -28,16 +28,6 @@
       data:
         title: "Afval"
         message: 'Het is vandaag - {{ now().strftime("%d-%m-%Y") }}. Afvaltype(n): {{ states.sensor.afvalwijzer_tomorrow.state }} wordt opgehaald op: {{ (as_timestamp(now()) + (24*3600)) | timestamp_custom("%d-%m-%Y", True) }}!'
-- alias: "React to a test"
-  trigger:
-    platform: event
-    event_type: matrix_command
-    event_data:
-      command: hassiotest
-  action:
-    service: notify.matrix_home
-    data:
-      message: "Hello back from home assistant!"
 - alias: "Send the shopping list"
   trigger:
     platform: event
@@ -47,5 +37,9 @@
   action:
     service: notify.matrix_home
     data:
-      message: "On the shopping list are: \n{{ states('sensor.shopping_list_items') }}"
+      message: >
+        On the shopping list are:
+        {% for item in states("sensor.shopping_list_items").split() %}
+          - {{ item.strip('"') }}
+        {% endfor %}  
       target: "{{ trigger.event.data['room'] }}"
