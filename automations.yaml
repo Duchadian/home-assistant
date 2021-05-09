@@ -39,7 +39,7 @@
     data:
       message: >
         On the shopping list are:
-        {% for item in states("sensor.shopping_list_items").split() %}
+        {% for item in states("sensor.shopping_list_items").split("\n") %}
           - {{ item.strip('"') }}
         {% endfor %}  
       target: "{{ trigger.event.data['room'] }}"
