@@ -37,6 +37,9 @@ sensor:
     provider: mijnafvalwijzer
     postal_code: !secret postal_code
     street_number: !secret street_number
+  - platform: command_line
+    name: shopping_list_items
+    command: "jq '.[] | select(.complete==false) | .name' .shopping_list.json "
 
 wake_on_lan:
 system_health:
