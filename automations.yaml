@@ -38,3 +38,13 @@
     service: notify.matrix_home
     data:
       message: "Hello back from home assistant!"
+- alias: "Send the shopping list"
+  trigger:
+    platform: event
+    event_type: matrix_command
+    event_data:
+      command: get_shopping_list
+  action:
+    service: notify.matrix_home
+    data:
+      message: "On the shopping list are: {{ states('sensor.shopping_list_items') }}"
