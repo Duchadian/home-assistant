@@ -83,8 +83,6 @@ matrix:
     - !secret matrix_home_room
     - !secret matrix_test_room
   commands:
-    - word: hassiotest
-      name: hassiotest
     - word: sl
       name: get_shopping_list
   

@@ -47,4 +47,5 @@
   action:
     service: notify.matrix_home
     data:
-      message: "On the shopping list are: {{ states('sensor.shopping_list_items') }}"
+      message: "On the shopping list are: \n{{ states('sensor.shopping_list_items') }}"
+      target: "{{ trigger.event.data['room'] }}"
