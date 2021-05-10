@@ -43,3 +43,13 @@
           - {{ item.strip('"') }}
         {% endfor %}  
       target: "{{ trigger.event.data['room'] }}"
+- alias: "Add to shopping list"
+  trigger:
+    platform: event
+    event_type: matrix_command
+    event_data:
+      command: add_shopping_list_item
+  action:
+    service: shopping_list.add_item
+    data:
+      name: "{{ trigger.event.data.args.item }}"

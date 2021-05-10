@@ -14,8 +14,9 @@ homeassistant:
   customize: !include customize.yaml
 
 # Configure a default setup of Home Assistant (frontend, api, etc)
-default_config:
+# default_config:
 shopping_list:
+python_script:
 
 # Uncomment this if you are using SSL/TLS, running in Docker container, etc.
 #http:
@@ -85,6 +86,8 @@ matrix:
   commands:
     - word: sl
       name: get_shopping_list
+    - expression: "Add (?P<item>) to shopping list"
+      name: add_shopping_list_item
   
 notify:
   - name: matrix_home
