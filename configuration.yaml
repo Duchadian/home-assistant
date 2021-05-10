@@ -14,25 +14,8 @@ homeassistant:
   customize: !include customize.yaml
 
 # Configure a default setup of Home Assistant (frontend, api, etc)
-# default_config:
+default_config:
 # change the default stuff cause some of it is not used
-counter:
-dhcp:
-frontend:
-history:
-logbook:
-map:
-media_source:
-mobile_app:
-person:
-scene:
-ssdp:
-sun:
-system_health:
-timer:
-updater:
-zeroconf:
-zone:
 
 # custom stuff
 shopping_list:
