@@ -89,7 +89,7 @@ matrix:
   commands:
     - word: sl
       name: get_shopping_list
-    - expression: "Add (?P<item>) to shopping list"
+    - expression: "Add (?P<item>.*) to shopping list"
       name: add_shopping_list_item
   
 notify:
