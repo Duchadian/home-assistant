@@ -2,10 +2,10 @@ homeassistant:
   # Name of the location where Home Assistant is running
   name: Home
   # Location required to calculate the time the sun rises and sets
-  #  latitude: !secret home_lat
-  #  longitude: !secret home_long
+  latitude: !secret home_lat
+  longitude: !secret home_long
   # Impacts weather/sunrise data (altitude above sea level in meters)
-  #  elevation: !secret home_el
+  elevation: !secret home_el
   # metric for Metric, imperial for Imperial
   unit_system: metric
   # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
@@ -15,7 +15,11 @@ homeassistant:
 
 # Configure a default setup of Home Assistant (frontend, api, etc)
 default_config:
+# change the default stuff cause some of it is not used
+
+# custom stuff
 shopping_list:
+python_script:
 
 # Uncomment this if you are using SSL/TLS, running in Docker container, etc.
 #http:
@@ -37,6 +41,9 @@ sensor:
     provider: mijnafvalwijzer
     postal_code: !secret postal_code
     street_number: !secret street_number
+  - platform: command_line
+    name: shopping_list_items
+    command: "jq '.[] | select(.complete==false) | .name' .shopping_list.json "
 
 wake_on_lan:
 system_health:
@@ -71,19 +78,22 @@ webostv:
       - "Spotify: muziek en podcasts"
       - "Amazon Prime Video"
       - "Disney+"
+      - "Videoland"
 
 matrix:
   homeserver: !secret matrix_homeserver
   username: !secret matrix_username
   password: !secret matrix_password
   rooms:
-    - !secret matrix_home
-    - !secret matrix_test
+    - !secret matrix_home_room
+    - !secret matrix_test_room
   commands:
-    - word: hassiotest
-      name: hassiotest
+    - word: sl
+      name: get_shopping_list
+    - expression: "[Aa]dd (?P<item>.*) to shopping list"
+      name: add_shopping_list_item
   
 notify:
   - name: matrix_home
     platform: matrix
-    default_room: !secret matrix_home
+    default_room: !secret matrix_home_room

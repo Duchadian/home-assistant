@@ -1,3 +1,10 @@
 known_devices.yaml
 secrets.yaml
 **pycache**
+*.db
+.storage/
+.HA_VERSION
+.matrix.conf
+webostv.conf
+.shopping_list.json
+*.log
