@@ -78,6 +78,7 @@ webostv:
       - "Spotify: muziek en podcasts"
       - "Amazon Prime Video"
       - "Disney+"
+      - "Videoland"
 
 matrix:
   homeserver: !secret matrix_homeserver
