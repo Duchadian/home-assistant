@@ -41,7 +41,7 @@
         On the shopping list are:
         {% for item in states("sensor.shopping_list_items").split("\n") %}
           - {{ item.strip('"') }}
-        {% endfor %}  
+        {% endfor %}
       target: "{{ trigger.event.data['room'] }}"
 - alias: "Add to shopping list"
   trigger:

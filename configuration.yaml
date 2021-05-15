@@ -31,19 +31,7 @@ python_script:
 discovery:
 
 # Sensors
-sensor:
-  - platform: systemmonitor
-    resources:
-      - type: disk_use_percent
-        arg: /
-      - type: load_15m
-  - platform: afvalwijzer
-    provider: mijnafvalwijzer
-    postal_code: !secret postal_code
-    street_number: !secret street_number
-  - platform: command_line
-    name: shopping_list_items
-    command: "jq '.[] | select(.complete==false) | .name' .shopping_list.json "
+sensor: !include_dir_list sensors
 
 wake_on_lan:
 system_health:
@@ -92,7 +80,7 @@ matrix:
       name: get_shopping_list
     - expression: "[Aa]dd (?P<item>.*) to shopping list"
       name: add_shopping_list_item
-  
+
 notify:
   - name: matrix_home
     platform: matrix
