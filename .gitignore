@@ -2,6 +2,8 @@ known_devices.yaml
 secrets.yaml
 **pycache**
 *.db
+*.db-shm
+*.db-wal
 .storage/
 .HA_VERSION
 .matrix.conf
