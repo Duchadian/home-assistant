@@ -41,13 +41,8 @@ media_extractor:
 group: !include groups.yaml
 automation: !include automations.yaml
 script: !include scripts.yaml
-
-input_boolean:
-  waste_moved:
-    name: Waste has been moved
-    initial: 'off'
-    icon: mdi:delete-empty
-
+input_boolean: !include_dir_named input_boolean
+notify: !include_dir_list notify
 
 webostv:
   name: TV
@@ -80,8 +75,3 @@ matrix:
       name: get_shopping_list
     - expression: "[Aa]dd (?P<item>.*) to shopping list"
       name: add_shopping_list_item
-
-notify:
-  - name: matrix_home
-    platform: matrix
-    default_room: !secret matrix_home_room

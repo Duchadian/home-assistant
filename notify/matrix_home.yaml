@@ -1,0 +1,3 @@
+name: matrix_home
+platform: matrix
+default_room: !secret matrix_home_room
