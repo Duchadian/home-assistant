@@ -1,0 +1,4 @@
+platform: template
+sensors:
+  solaredge_current_power_kwh:
+    value_template: "{{ (states('sensor.solaredge_current_power') | float / 1000) | round(2) }}"
