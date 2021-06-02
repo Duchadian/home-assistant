@@ -1,0 +1,3 @@
+# switch.laundry_timer_start:
+#   friendly_name: "Start timer for laundry"
+#   icon: mdi:washing-machine
