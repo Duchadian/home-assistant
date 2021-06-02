@@ -21,12 +21,6 @@ default_config:
 shopping_list:
 python_script:
 
-# Uncomment this if you are using SSL/TLS, running in Docker container, etc.
-#http:
-#  base_url: 192.168.178.73:8123
-#  ssl_certificate: /ssl/fullchain.pem
-#  ssl_key: /ssl/privkey.pem
-
 # Discover some devices automatically
 discovery:
 
@@ -42,6 +36,7 @@ group: !include groups.yaml
 automation: !include automations.yaml
 script: !include scripts.yaml
 input_boolean: !include_dir_named input_boolean
+timer: !include_dir_named timer
 notify: !include_dir_list notify
 
 webostv:
