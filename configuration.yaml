@@ -40,6 +40,7 @@ group: !include groups.yaml
 automation: !include automations.yaml
 script: !include scripts.yaml
 input_boolean: !include_dir_named input_boolean
+input_number: !include_dir_named input_number
 timer: !include_dir_named timer
 notify: !include_dir_list notify
 
