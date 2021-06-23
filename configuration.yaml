@@ -20,6 +20,10 @@ default_config:
 # custom stuff
 shopping_list:
 python_script:
+http:
+  use_x_forwarded_for: true
+  trusted_proxies:
+    - !secret proxy_ip
 
 # Discover some devices automatically
 discovery:
