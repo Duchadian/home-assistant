@@ -18,11 +18,8 @@ default_config:
 # change the default stuff cause some of it is not used
 
 # custom stuff
-lovelace:
-  mode: yaml
-  resources:
-    - url: /local/lg-remote-control/lg-remote-control.js
-      type: module
+lovelace: !include lovelace/lovelace.yaml
+
 shopping_list:
 python_script:
 http:
