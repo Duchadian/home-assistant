@@ -1,15 +1,11 @@
 title: Home
-path: default_view
+path: home
 badges:
   - entity: person.tim
   - entity: person.sabine
 cards:
-  - type: custom:lg-remote-control
-    entity: media_player.tv
   - title: Shopping list
     type: shopping-list
-  - type: media-control
-    entity: media_player.chromecast
   - type: entities
     entities:
       - sensor.afvalwijzer_gft
