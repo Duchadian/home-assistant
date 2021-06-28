@@ -21,7 +21,7 @@ default_config:
 lovelace:
   mode: yaml
   resources:
-    - url: /local/lg-remote/lg-remote-control.js
+    - url: /local/lg-remote/lg-remote.js
       type: module
 shopping_list:
 python_script:
