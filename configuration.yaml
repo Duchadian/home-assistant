@@ -18,6 +18,8 @@ default_config:
 # change the default stuff cause some of it is not used
 
 # custom stuff
+lovelace:
+  mode: yaml
 shopping_list:
 python_script:
 http:
