@@ -21,13 +21,8 @@ default_config:
 lovelace:
   mode: yaml
   resources:
-<<<<<<< HEAD
-  - url: /local/lg-remote/lg-remote.js
-    type: module
-=======
-    - url: /local/lg-remote/lg-remote-control.js
+    - url: /local/lg-remote-control/lg-remote-control.js
       type: module
->>>>>>> parent of 743bbc9 (also change name in configuration.yaml)
 shopping_list:
 python_script:
 http:
