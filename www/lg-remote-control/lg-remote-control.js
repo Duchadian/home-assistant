@@ -121,7 +121,7 @@ class LgRemoteControl extends LitElement {
     }
 
     static get tvheadphone() {
-        return html`    
+        return html`
               <svg version="1.1" id="Livello_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
               viewBox="0 0 567 171" style="enable-background:new 0 0 567 171;" xml:space="preserve">
               <style type="text/css">
@@ -264,13 +264,13 @@ class LgRemoteControl extends LitElement {
                       <button class="btn-flat flat-high ripple" @click=${() => this._channelList()}><ha-icon icon="mdi:format-list-numbered"/></button>
                       <button class="btn ripple" @click=${() => this._media_player_service("toggle")}><ha-icon icon="mdi:power" style="color: red;"/></button>
                       <button class="btn-flat flat-high ripple" @click=${() => this._show_keypad = !this._show_keypad}>123</button>
-                  </div> 
+                  </div>
                  ${this._show_inputs ? html`
 <!-- ################################# SOURCES ################################# -->
                   <div class="grid-container-input">
                   <div class="shape-input">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 130"><path d="m 187 43 a 30 30 0 0 0 60 0 a 30 30 0 0 0 -60 0 M 148 12 a 30 30 0 0 1 30 30 a 40 40 0 0 0 40 40 a 30 30 0 0 1 30 30 v 18 h -236 v -88 a 30 30 0 0 1 30 -30" fill="var(--remote-button-color)" stroke="#000000" stroke-width="0" /></svg>
-                   </div>   
+                   </div>
                     <button class="ripple bnt-input-back" @click=${() => this._show_inputs = false}><ha-icon icon="mdi:undo-variant"/></button>
                     <p class="source_text"><b>SOURCE</b></p>
                   <div class="grid-item-input">
@@ -332,13 +332,13 @@ class LgRemoteControl extends LitElement {
                         <button class="btn-keypad ripple" @click=${() => this._button("0")}>0</button>
                         <button class="btn-keypad"></button>
                   </div>
-  <!-- ################################# keypad end ############################## --> 
+  <!-- ################################# keypad end ############################## -->
                  ` : html`
 <!-- ################################# DIRECTION PAD ################################# -->
                   <div class="grid-container-cursor">
                   <div class="shape">
                       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 79"><path d="m 30 15 a 10 10 0 0 1 20 0 a 15 15 0 0 0 15 15 a 10 10 0 0 1 0 20 a 15 15 0 0 0 -15 15 a 10 10 0 0 1 -20 0 a 15 15 0 0 0 -15 -15 a 10 10 0 0 1 0 -20 a 15 15 0 0 0 15 -15" fill="var(--remote-button-color)" stroke="#000000" stroke-width="0" /></svg>
-                    </div> 
+                    </div>
                       <button class="btn ripple item_sound" @click=${() => this._show_sound_output = true}><ha-icon icon="mdi:speaker"/></button>
                       <button class="btn ripple item_up" style="background-color: transparent;" @click=${() => this._button("UP")}><ha-icon icon="mdi:chevron-up"/></button>
                       <button class="btn ripple item_input" @click=${() => this._show_inputs = true}><ha-icon icon="mdi:import"/></button>
@@ -351,7 +351,7 @@ class LgRemoteControl extends LitElement {
                     </div>
 <!-- ################################# DIRECTION PAD END ################################# -->
                   `}
-                
+
                   `}
 <!-- ################################# SOURCE BUTTONS ################################# -->
                   ${this.config.sources ? html`
@@ -405,7 +405,7 @@ class LgRemoteControl extends LitElement {
                       <button class="btn-flat flat-low ripple"  @click=${() => this._command("media.controls/rewind")}><ha-icon icon="mdi:skip-backward"/></button>
                       <button class="btn-flat flat-low ripple" style="color: red;" @click=${() => this._command("media.controls/Record")}><ha-icon icon="mdi:record"/></button>
                       <button class="btn-flat flat-low ripple"  @click=${() => this._command("media.controls/fastForward")}><ha-icon icon="mdi:skip-forward"/></button>
-                  </div> 
+                  </div>
 <!-- ################################# MEDIA CONTROL END ################################# -->
                   </div>
                 `}
@@ -557,7 +557,7 @@ class LgRemoteControl extends LitElement {
            overflow: hidden;
            height: var(--remotewidth);
            width: var(--remotewidth);
-           grid-template-areas: "sound up input" "left ok right" "back down exit" 
+           grid-template-areas: "sound up input" "left ok right" "back down exit"
       }
        .grid-container-keypad {
            display: grid;
@@ -587,7 +587,7 @@ class LgRemoteControl extends LitElement {
            overflow: hidden;
            height: var(--remotewidth);
            width: var(--remotewidth);
-           grid-template-areas: "bnt title" ". ." "tv tv-opt" "tv-phone opt" "hdmi line" "phone bluetooth" 
+           grid-template-areas: "bnt title" ". ." "tv tv-opt" "tv-phone opt" "hdmi line" "phone bluetooth"
       }
        .grid-container-source {
            display: grid;
@@ -770,7 +770,7 @@ class LgRemoteControl extends LitElement {
       }
        ha-icon {
            width: calc(var(--remotewidth) / 10.8);
-           height: calc(var(--remotewidth) / 10.8); 
+           height: calc(var(--remotewidth) / 10.8);
       }
        .btn {
            background-color: var(--remote-button-color);
@@ -848,7 +848,7 @@ class LgRemoteControl extends LitElement {
             margin: auto;
             place-items: center;
             cursor: pointer;
-        }   
+        }
 
        .icon_source {
            height: 100%;
@@ -911,7 +911,7 @@ class LgRemoteControl extends LitElement {
            border: solid 2px var(--remote-color);
       }
        .overlay {
-           background-color: rgba(0,0,0,0.02) 
+           background-color: rgba(0,0,0,0.02)
       }
        .flat-high {
            width: 70%;

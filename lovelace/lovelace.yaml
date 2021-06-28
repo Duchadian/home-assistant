@@ -1,0 +1,6 @@
+mode: yaml
+resources:
+  - url: /local/lg-remote-control/lg-remote-control.js
+    type: module
+  - url: /local/power-wheel/power-wheel-card.js
+    type: module

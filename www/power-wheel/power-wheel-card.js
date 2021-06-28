@@ -124,7 +124,7 @@ class PowerWheelCard extends LitElement {
       }
     `];
   }
-  
+
   /* Card functions */
 
   static _generateClass(value) {
@@ -500,7 +500,7 @@ class PowerWheelCard extends LitElement {
       </style>
       <ha-card>
         ${this.messages.length ? this.messages.map((message) => { return html`<div class="message ${message.type}">${message.text}</div>`}) : ''}
-        ${this.views.energy.capable ? html`<ha-icon id="toggle-button" class="${this.autoToggleView ? `active` : `inactive`}" icon="mdi:recycle" @click="${() => this._toggleAutoToggleView()}" title="Turn ${this.autoToggleView ? `off` : `on`} auto-toggle"></ha-icon>` : ''}        
+        ${this.views.energy.capable ? html`<ha-icon id="toggle-button" class="${this.autoToggleView ? `active` : `inactive`}" icon="mdi:recycle" @click="${() => this._toggleAutoToggleView()}" title="Turn ${this.autoToggleView ? `off` : `on`} auto-toggle"></ha-icon>` : ''}
         <div id="title" class="header">
           ${this.views[this.view].title}
         </div>
@@ -533,13 +533,13 @@ class PowerWheelCard extends LitElement {
       </ha-card>
     `;
   }
-  
+
   /* Template functions */
 
   _cell(id, cellObj, cellType, hideValue1, hideValue2, visibilityClass) {
     return html`
       <div id="cell-${id}"
-            class="cell ${cellType} ${cellObj.hasSensor && !visibilityClass ? 'sensor' : ''} ${visibilityClass || ''}" 
+            class="cell ${cellType} ${cellObj.hasSensor && !visibilityClass ? 'sensor' : ''} ${visibilityClass || ''}"
             @click="${cellObj.hasSensor && !visibilityClass ? () => this._handleClick(cellObj.stateObj) : () => {}}"
             title="${cellObj.hasSensor ? `More info${cellObj.stateObj.attributes.friendly_name ? ':\n' + cellObj.stateObj.attributes.friendly_name : ''}` : ''}">
         <ha-icon id="icon-${id}" class="icon ${cellObj.classValue} ${cellType}-icon" icon="${cellObj.icon}"></ha-icon>
@@ -603,7 +603,7 @@ class PowerWheelCard extends LitElement {
         this.view = 'power';
     }
   }
-  
+
   /* Config functions */
 
   _getSensors(config) {

@@ -59,7 +59,7 @@
     event_type: timer.finished
     event_data:
       entity_id: timer.laundry
-  action: 
+  action:
   - service: notify.matrix_home
     data:
       message: "The laundry should be done!"
