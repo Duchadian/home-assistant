@@ -31,7 +31,8 @@ cards:
           action: call-service
           service: timer.start
           service_data:
-            duration: '4800'
+            duration: >
+             {{ states('input_number.laundry_slider') | multiply(60) | int }}
           target:
             entity_id: timer.laundry
         hold_action:
