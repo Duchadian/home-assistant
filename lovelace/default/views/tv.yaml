@@ -1,5 +1,6 @@
 title: TV
 path: default_view
+panel: true
 badges: []
 cards:
   - type: custom:lg-remote-control
