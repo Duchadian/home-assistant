@@ -1,0 +1,26 @@
+title: Statistics
+path: statistics
+badges: []
+cards:
+  - type: glance
+    entities:
+      - entity: sensor.solaredge_current_power
+      - entity: sensor.solaredge_energy_today
+      - entity: sensor.solaredge_energy_this_month
+      - entity: sensor.solaredge_lifetime_energy
+    title: Solar
+    columns: 2
+  - type: entities
+    entities:
+      - sensor.dsmr_consumption_gas_currently_delivered
+      - sensor.dsmr_reading_electricity_currently_delivered
+      - sensor.dsmr_reading_electricity_currently_returned
+  - type: custom:power-wheel-card
+    solar_power_entity: sensor.solaredge_current_power_kwh
+    grid_power_consumption_entity: sensor.dsmr_reading_electricity_currently_delivered
+    grid_power_production_entity: sensor.dsmr_reading_electricity_currently_returned
+    power_decimals: 3
+  - type: weather-forecast
+    entity: weather.openweathermap
+  - type: light
+    entity: light.woonkamer

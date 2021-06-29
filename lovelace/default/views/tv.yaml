@@ -1,0 +1,11 @@
+title: TV
+path: default_view
+panel: true
+badges: []
+cards:
+  - type: vertical-stack
+    cards:
+    - type: custom:lg-remote-control
+      entity: media_player.tv
+    - type: media-control
+      entity: media_player.chromecast
