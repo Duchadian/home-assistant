@@ -39,3 +39,4 @@ cards:
   - type: 'custom:weather-card-chart'
     title: Weather
     weather: weather.openweathermap
+    mode: hourly
