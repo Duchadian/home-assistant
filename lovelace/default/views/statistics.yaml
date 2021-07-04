@@ -11,6 +11,7 @@ cards:
     title: Solar
     columns: 2
   - type: entities
+    title: "Meter readings"
     entities:
       - sensor.dsmr_consumption_gas_currently_delivered
       - sensor.dsmr_reading_electricity_currently_delivered
@@ -24,3 +25,10 @@ cards:
     entity: weather.openweathermap
   - type: light
     entity: light.woonkamer
+  - type: entities
+    title: "Hassos sensors"
+    entities:
+      - sensor.load_15m
+      - sensor.processor_temperature
+      - sensor.memory_use_percent
+      - sensor.disk_use_percent
