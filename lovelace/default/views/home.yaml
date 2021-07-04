@@ -36,5 +36,6 @@ cards:
   - type: entities
     entities:
       - input_number.laundry_slider
-  - type: weather-forecast
+  - type: 'custom:weather-card-chart'
+    title: Weather
     entity: weather.openweathermap
