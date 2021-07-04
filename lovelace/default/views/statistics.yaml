@@ -11,16 +11,21 @@ cards:
     title: Solar
     columns: 2
   - type: entities
+    title: "Meter readings"
     entities:
       - sensor.dsmr_consumption_gas_currently_delivered
       - sensor.dsmr_reading_electricity_currently_delivered
       - sensor.dsmr_reading_electricity_currently_returned
   - type: custom:power-wheel-card
+    title: "Power usage and delivery"
     solar_power_entity: sensor.solaredge_current_power_kwh
     grid_power_consumption_entity: sensor.dsmr_reading_electricity_currently_delivered
     grid_power_production_entity: sensor.dsmr_reading_electricity_currently_returned
     power_decimals: 3
-  - type: weather-forecast
-    entity: weather.openweathermap
-  - type: light
-    entity: light.woonkamer
+  - type: entities
+    title: "Hassos sensors"
+    entities:
+      - sensor.load_15m
+      - sensor.processor_temperature
+      - sensor.memory_use_percent
+      - sensor.disk_use_percent
