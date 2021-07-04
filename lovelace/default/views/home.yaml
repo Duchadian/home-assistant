@@ -38,4 +38,4 @@ cards:
       - input_number.laundry_slider
   - type: 'custom:weather-card-chart'
     title: Weather
-    entity: weather.openweathermap
+    weather: weather.openweathermap
