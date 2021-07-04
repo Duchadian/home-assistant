@@ -21,10 +21,6 @@ cards:
     grid_power_consumption_entity: sensor.dsmr_reading_electricity_currently_delivered
     grid_power_production_entity: sensor.dsmr_reading_electricity_currently_returned
     power_decimals: 3
-  - type: weather-forecast
-    entity: weather.openweathermap
-  - type: light
-    entity: light.woonkamer
   - type: entities
     title: "Hassos sensors"
     entities:
