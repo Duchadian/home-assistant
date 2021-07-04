@@ -4,3 +4,5 @@ resources:
     type: module
   - url: /local/power-wheel/power-wheel-card.js
     type: module
+  - url: /local/weather-card-chart
+    type: module
