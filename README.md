@@ -6,3 +6,4 @@ This is the configuration for my homeassistant. The configuration currently runs
 ## TODO
 
 - implement chromecast control scripts
+- make checks to enforce code standards (i.e. pre-commit)
