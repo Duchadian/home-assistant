@@ -1,0 +1,1 @@
+https://raw.githubusercontent.com/Yevgenium/lovelace-weather-card-chart/master/weather-card-chart.js
