@@ -6,3 +6,5 @@ resources:
     type: module
   - url: /local/weather-card-chart/weather-card-chart.js
     type: module
+  - url: /local/mini-graph-card/mini-graph-card-bundle.js?v=0.10.0
+    type: module
