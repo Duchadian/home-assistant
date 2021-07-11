@@ -63,3 +63,13 @@
   - service: notify.matrix_home
     data:
       message: "The laundry should be done!"
+- alias: "Respond to door"
+  trigger:
+    platform: state
+    entity_id: binary_sensor.doorbell_doorbell_pressed
+    from: "Clear"
+    to: "Detected"
+  action:
+    - service: notify.matrix_home
+      data:
+        message: "There is someone at the door!"
