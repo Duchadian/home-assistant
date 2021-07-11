@@ -8,3 +8,5 @@ resources:
     type: module
   - url: /local/mini-graph-card/mini-graph-card-bundle.js?v=0.10.0
     type: module
+  - url: /local/multiple-entity-row/multiple-entity-row.js?v=4.2.0
+    type: module
