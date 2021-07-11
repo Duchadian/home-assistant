@@ -67,8 +67,8 @@
   trigger:
     platform: state
     entity_id: binary_sensor.doorbell_doorbell_pressed
-    from: "Clear"
-    to: "Detected"
+    from: "off"
+    to: "on"
   action:
     - service: notify.matrix_home
       data:
