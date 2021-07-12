@@ -77,3 +77,6 @@ matrix:
       name: get_shopping_list
     - expression: "[Aa]dd (?P<item>.*) to shopping list"
       name: add_shopping_list_item
+
+downloader:
+  download_dir: downloads
