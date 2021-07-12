@@ -78,4 +78,6 @@
     - service: notify.matrix_home
       data:
         message: "There is someone at the door!"
+        images:
+          - '/config/downloads/last_event.jpg'
 
