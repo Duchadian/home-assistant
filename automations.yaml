@@ -70,6 +70,12 @@
     from: "off"
     to: "on"
   action:
+    - service: downloader.download_file
+      data:
+        url: "!secret base_url/api/camera_proxy/camera.doorbell_last_event?token={{ states('camera.doorbell_last_event').access_token }}"
+        filename: "last_event.jpg"
+        overwrite: true
     - service: notify.matrix_home
       data:
         message: "There is someone at the door!"
+
