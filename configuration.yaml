@@ -12,6 +12,8 @@ homeassistant:
   time_zone: Europe/Amsterdam
   # Customization file
   customize: !include customize.yaml
+  allowlist_external_dirs:
+    - "/config/downloads"
 
 # Configure a default setup of Home Assistant (frontend, api, etc)
 default_config:
