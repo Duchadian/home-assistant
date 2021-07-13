@@ -72,7 +72,7 @@
   action:
     - service: downloader.download_file
       data:
-        url: "{{ states('base_url') }}/api/camera_proxy/camera.doorbell_last_event?token={{ state_attr('camera.doorbell_last_event', 'access_token') }}"
+        url: "{{ states('input_text.base_url') }}/api/camera_proxy/camera.doorbell_last_event?token={{ state_attr('camera.doorbell_last_event', 'access_token') }}"
         filename: "last_event.jpg"
         overwrite: true
     - service: notify.matrix_home
