@@ -1,0 +1,4 @@
+platform: template
+sensors:
+  base_url:
+    value_template: "!secret base_url"
