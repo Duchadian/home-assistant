@@ -36,7 +36,3 @@ cards:
   - type: entities
     entities:
       - input_number.laundry_slider
-  - type: 'custom:weather-card-chart'
-    title: Weather
-    weather: weather.openweathermap
-    mode: hourly

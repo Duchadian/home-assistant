@@ -7,5 +7,3 @@ cards:
     cards:
     - type: custom:lg-remote-control
       entity: media_player.tv
-    - type: media-control
-      entity: media_player.chromecast
