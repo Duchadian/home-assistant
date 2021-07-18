@@ -11,3 +11,4 @@ webostv.conf
 .shopping_list.json
 *.log
 venv
+downloads
