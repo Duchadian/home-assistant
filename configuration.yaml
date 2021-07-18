@@ -12,6 +12,8 @@ homeassistant:
   time_zone: Europe/Amsterdam
   # Customization file
   customize: !include customize.yaml
+  allowlist_external_dirs:
+    - "/config/downloads"
 
 # Configure a default setup of Home Assistant (frontend, api, etc)
 default_config:
@@ -43,6 +45,7 @@ automation: !include automations.yaml
 script: !include scripts.yaml
 input_boolean: !include_dir_named input_boolean
 input_number: !include_dir_named input_number
+input_text: !include_dir_named input_text
 timer: !include_dir_named timer
 notify: !include_dir_list notify
 
@@ -77,3 +80,6 @@ matrix:
       name: get_shopping_list
     - expression: "[Aa]dd (?P<item>.*) to shopping list"
       name: add_shopping_list_item
+
+downloader:
+  download_dir: downloads
