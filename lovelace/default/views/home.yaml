@@ -4,43 +4,39 @@ badges:
   - entity: person.tim
   - entity: person.sabine
 cards:
-  - type: grid
-    columns: 2
-    square: false
+  - title: Shopping list
+    type: shopping-list
+  - type: entities
+    entities:
+      - sensor.afvalwijzer_gft
+      - sensor.afvalwijzer_papier
+      - sensor.afvalwijzer_plastic
+      - sensor.afvalwijzer_restafval
+      - input_boolean.waste_moved
+    title: Trash
+  - type: vertical-stack
+    title: "Laundry"
     cards:
-    - title: Shopping list
-      type: shopping-list
+    - type: button
+      entity: timer.laundry
+      icon: mdi:washing-machine
+      name: Start laundry timer
+      show_state: true
+      tap_action:
+        action: call-service
+        service: timer.start
+        service_data:
+          duration: >
+            {{ states('input_number.laundry_slider') | multiply(60) | int }}
+        target:
+          entity_id: timer.laundry
+      hold_action:
+        action: call-service
+        service: timer.cancel
+        service_data: {}
+        target:
+          entity_id: timer.laundry
     - type: entities
       entities:
-        - sensor.afvalwijzer_gft
-        - sensor.afvalwijzer_papier
-        - sensor.afvalwijzer_plastic
-        - sensor.afvalwijzer_restafval
-        - input_boolean.waste_moved
-      title: Trash
-    - type: vertical-stack
-      title: "Laundry"
-      cards:
-      - type: button
-        entity: timer.laundry
-        icon: mdi:washing-machine
-        name: Start laundry timer
-        show_state: true
-        tap_action:
-          action: call-service
-          service: timer.start
-          service_data:
-            duration: >
-              {{ states('input_number.laundry_slider') | multiply(60) | int }}
-          target:
-            entity_id: timer.laundry
-        hold_action:
-          action: call-service
-          service: timer.cancel
-          service_data: {}
-          target:
-            entity_id: timer.laundry
-      - type: entities
-        entities:
-          - input_number.laundry_slider
+        - input_number.laundry_slider
     
