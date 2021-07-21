@@ -41,7 +41,7 @@ cards:
           - attribute: days_until_collection_date
             name: Days until collection
             styles:
-              text-align: center
+              text-align: right
       - entity: sensor.afvalwijzer_papier
         type: custom:multiple-entity-row
         name: papier
@@ -49,7 +49,7 @@ cards:
         entities:
           - attribute: days_until_collection_date
             styles:
-              text-align: center
+              text-align: right
       - entity: sensor.afvalwijzer_plastic
         type: custom:multiple-entity-row
         name: plastic
@@ -57,7 +57,7 @@ cards:
         entities:
           - attribute: days_until_collection_date
             styles:
-              text-align: center
+              text-align: right
       - entity: sensor.afvalwijzer_restafval
         type: custom:multiple-entity-row
         name: restafval
@@ -65,7 +65,7 @@ cards:
         entities:
           - attribute: days_until_collection_date
             styles:
-              text-align: center
+              text-align: right
       - input_boolean.waste_moved
       - type: section
       - entity: sensor.pollen_grass_risk
