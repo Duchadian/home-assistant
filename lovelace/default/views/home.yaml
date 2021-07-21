@@ -39,18 +39,18 @@ cards:
     - type: entities
       entities:
         - input_number.laundry_slider
-    - type: entities
-      entities:
-        - entity: sensor.pollen_grass_risk
-          type: custom:multiple-entity-row
-          entities:
-          - sensor.pollen_grass
-        - entity: sensor.pollen_tree_risk
-          type: custom:multiple-entity-row
-          entities:
-          - sensor.pollen_tree
-        - entity: sensor.pollen_weed_risk
-          type: custom:multiple-entity-row
-          entities:
-          - sensor.pollen_weed
+  - type: entities
+    entities:
+      - entity: sensor.pollen_grass_risk
+        type: custom:multiple-entity-row
+        entities:
+        - sensor.pollen_grass
+      - entity: sensor.pollen_tree_risk
+        type: custom:multiple-entity-row
+        entities:
+        - sensor.pollen_tree
+      - entity: sensor.pollen_weed_risk
+        type: custom:multiple-entity-row
+        entities:
+        - sensor.pollen_weed
     
