@@ -39,4 +39,11 @@ cards:
     - type: entities
       entities:
         - input_number.laundry_slider
+    - type: entities
+      entities:
+        - entity: sensor.pollen_grass_risk
+          type: custom:multiple-entity-row
+          name: Grass pollen
+          entities:
+          - sensor.pollen_grass
     
