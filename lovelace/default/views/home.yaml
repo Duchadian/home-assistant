@@ -82,23 +82,19 @@ cards:
       - entity: sensor.pollen_tree_risk
         type: custom:multiple-entity-row
         name: Trees
-        state_header: risk
         styles:
           width: 60px
         entities:
         - entity: sensor.pollen_tree
-          name: level
           styles:
             text-align: right
       - entity: sensor.pollen_weed_risk
         type: custom:multiple-entity-row
         name: Weeds
-        state_header: risk
         styles:
           width: 60px
         entities:
         - entity: sensor.pollen_weed
-          name: level
           styles:
             text-align: right
     
