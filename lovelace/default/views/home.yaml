@@ -11,7 +11,7 @@ cards:
       - entity: timer.laundry
         icon: mdi:washing-machine
         type: custom:multiple-entity-row
-        name: Icons with tap_action
+        name: Laundry timer
         entities:
           - icon: mdi:lightbulb-off-outline
             state_color: true
@@ -32,6 +32,7 @@ cards:
               target:
                 entity_id: timer.laundry
       - entity: input_number.laundry_slider
+        name: "Laundry timer time"
       - type: section
       - entity: sensor.afvalwijzer_gft
         type: custom:multiple-entity-row
