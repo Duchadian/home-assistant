@@ -12,8 +12,6 @@ cards:
         icon: mdi:washing-machine
         type: custom:multiple-entity-row
         name: Icons with tap_action
-        show_state: false
-        secondary_info: last-changed
         entities:
           - icon: mdi:lightbulb-off-outline
             state_color: true
