@@ -28,7 +28,7 @@ cards:
               service: timer.start
               service_data:
                 duration: >
-                  {{ states('input_number.laundry_slider') | multiply(60) | int }}
+                  "00:{{ states('input_number.laundry_slider') | multiply(60) | int }}:00"
               target:
                 entity_id: timer.laundry
       - entity: input_number.laundry_slider
