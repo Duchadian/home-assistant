@@ -70,6 +70,7 @@ cards:
       - type: section
       - entity: sensor.pollen_grass_risk
         type: custom:multiple-entity-row
+        name: Grasses
         styles:
           width: 60px
         entities:
@@ -78,6 +79,7 @@ cards:
             text-align: left
       - entity: sensor.pollen_tree_risk
         type: custom:multiple-entity-row
+        name: Trees
         styles:
           width: 60px
         entities:
@@ -86,6 +88,7 @@ cards:
             text-align: left
       - entity: sensor.pollen_weed_risk
         type: custom:multiple-entity-row
+        name: Weeds
         styles:
           width: 60px
         entities:
