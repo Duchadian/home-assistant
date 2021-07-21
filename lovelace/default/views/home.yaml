@@ -44,19 +44,19 @@ cards:
         type: custom:multiple-entity-row
         name: papier
         show_state: false
-        attributes:
+        entities:
           - attribute: days_until_collection_date
       - entity: sensor.afvalwijzer_plastic
         type: custom:multiple-entity-row
         name: plastic
         show_state: false
-        attributes:
+        entities:
           - attribute: days_until_collection_date
       - entity: sensor.afvalwijzer_restafval
         type: custom:multiple-entity-row
         name: restafval
         show_state: false
-        attributes:
+        entities:
           - attribute: days_until_collection_date
       - input_boolean.waste_moved
       - type: section
