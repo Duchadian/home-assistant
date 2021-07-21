@@ -40,24 +40,32 @@ cards:
         entities:
           - attribute: days_until_collection_date
             name: Days until collection
+            styles:
+              text-align: center
       - entity: sensor.afvalwijzer_papier
         type: custom:multiple-entity-row
         name: papier
         show_state: false
         entities:
           - attribute: days_until_collection_date
+            styles:
+              text-align: center
       - entity: sensor.afvalwijzer_plastic
         type: custom:multiple-entity-row
         name: plastic
         show_state: false
         entities:
           - attribute: days_until_collection_date
+            styles:
+              text-align: center
       - entity: sensor.afvalwijzer_restafval
         type: custom:multiple-entity-row
         name: restafval
         show_state: false
         entities:
           - attribute: days_until_collection_date
+            styles:
+              text-align: center
       - input_boolean.waste_moved
       - type: section
       - entity: sensor.pollen_grass_risk
