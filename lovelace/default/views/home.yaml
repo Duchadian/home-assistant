@@ -71,7 +71,7 @@ cards:
       - entity: sensor.pollen_grass_risk
         type: custom:multiple-entity-row
         styles:
-          width: 60
+          width: 60px
         entities:
         - entity: sensor.pollen_grass
           styles:
@@ -79,7 +79,7 @@ cards:
       - entity: sensor.pollen_tree_risk
         type: custom:multiple-entity-row
         styles:
-          width: 60
+          width: 60px
         entities:
         - entity: sensor.pollen_tree
           styles:
@@ -87,7 +87,7 @@ cards:
       - entity: sensor.pollen_weed_risk
         type: custom:multiple-entity-row
         styles:
-          width: 60
+          width: 60px
         entities:
         - entity: sensor.pollen_weed
           styles:
