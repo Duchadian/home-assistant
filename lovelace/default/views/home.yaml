@@ -6,14 +6,6 @@ badges:
 cards:
   - title: Shopping list
     type: shopping-list
-  # - type: entities
-  #   entities:
-  #     - sensor.afvalwijzer_gft
-  #     - sensor.afvalwijzer_papier
-  #     - sensor.afvalwijzer_plastic
-  #     - sensor.afvalwijzer_restafval
-  #     - input_boolean.waste_moved
-  #   title: Trash
   - type: vertical-stack
     title: "Laundry"
     cards:
@@ -44,27 +36,31 @@ cards:
       - entity: sensor.afvalwijzer_gft
         type: custom:multiple-entity-row
         name: gft
-        secondary_info:
-          attribute: days_until_collection_date
-          name: Days until collection -
+        show_state: false
+        entities:
+          - attribute: days_until_collection_date
+            name: Days until collection
       - entity: sensor.afvalwijzer_papier
         type: custom:multiple-entity-row
         name: papier
-        secondary_info:
-          attribute: days_until_collection_date
-          name: Days until collection -
+        show_state: false
+        attributes:
+          - attribute: days_until_collection_date
+            name: Days until collection
       - entity: sensor.afvalwijzer_plastic
         type: custom:multiple-entity-row
         name: plastic
-        secondary_info:
-          attribute: days_until_collection_date
-          name: Days until collection -
+        show_state: false
+        attributes:
+          - attribute: days_until_collection_date
+            name: Days until collection
       - entity: sensor.afvalwijzer_restafval
         type: custom:multiple-entity-row
         name: restafval
-        secondary_info:
-          attribute: days_until_collection_date
-          name: Days until collection -
+        show_state: false
+        attributes:
+          - attribute: days_until_collection_date
+            name: Days until collection
       - input_boolean.waste_moved
       - type: section
       - entity: sensor.pollen_grass_risk
