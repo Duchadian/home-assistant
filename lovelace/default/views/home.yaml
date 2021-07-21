@@ -71,13 +71,19 @@ cards:
       - entity: sensor.pollen_grass_risk
         type: custom:multiple-entity-row
         entities:
-        - sensor.pollen_grass
+        - entity: sensor.pollen_grass
+          styles:
+            text-align: left
       - entity: sensor.pollen_tree_risk
         type: custom:multiple-entity-row
         entities:
-        - sensor.pollen_tree
+        - entity: sensor.pollen_tree
+          styles:
+            text-align: left
       - entity: sensor.pollen_weed_risk
         type: custom:multiple-entity-row
         entities:
-        - sensor.pollen_weed
+        - entity: sensor.pollen_weed
+          styles:
+            text-align: left
     
