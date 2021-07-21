@@ -11,7 +11,7 @@ cards:
       - entity: timer.laundry
         icon: mdi:washing-machine
         type: custom:multiple-entity-row
-        name: Laundry timer
+        name: "Laundry timer state"
         entities:
           - icon: mdi:lightbulb-off-outline
             state_color: true
