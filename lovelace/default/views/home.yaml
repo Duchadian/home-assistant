@@ -6,40 +6,15 @@ badges:
 cards:
   - title: Shopping list
     type: shopping-list
-  # - type: vertical-stack
-  #   title: "Laundry"
-  #   cards:
-  #   - type: button
-  #     entity: timer.laundry
-  #     icon: mdi:washing-machine
-  #     name: Start laundry timer
-  #     show_state: true
-  #     tap_action:
-  #       action: call-service
-  #       service: timer.start
-  #       service_data:
-  #         duration: >
-  #           {{ states('input_number.laundry_slider') | multiply(60) | int }}
-  #       target:
-  #         entity_id: timer.laundry
-  #     hold_action:
-  #       action: call-service
-  #       service: timer.cancel
-  #       service_data: {}
-  #       target:
-  #         entity_id: timer.laundry
-  #   - type: entities
-  #     entities:
-  #       - input_number.laundry_slider
   - type: entities
     entities:
       - entity: timer.laundry
         icon: mdi:washing-machine
         type: custom:multiple-entity-row
         name: Icons with tap_action
+        show_state: false
         secondary_info: last-changed
         entities:
-          - entity: input_number.laundry_slider
           - icon: mdi:lightbulb-off-outline
             state_color: true
             tap_action:
