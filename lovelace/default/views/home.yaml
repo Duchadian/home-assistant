@@ -70,18 +70,24 @@ cards:
       - type: section
       - entity: sensor.pollen_grass_risk
         type: custom:multiple-entity-row
+        styles:
+          width: 60
         entities:
         - entity: sensor.pollen_grass
           styles:
             text-align: left
       - entity: sensor.pollen_tree_risk
         type: custom:multiple-entity-row
+        styles:
+          width: 60
         entities:
         - entity: sensor.pollen_tree
           styles:
             text-align: left
       - entity: sensor.pollen_weed_risk
         type: custom:multiple-entity-row
+        styles:
+          width: 60
         entities:
         - entity: sensor.pollen_weed
           styles:
