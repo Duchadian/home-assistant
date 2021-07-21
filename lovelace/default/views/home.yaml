@@ -71,28 +71,34 @@ cards:
       - entity: sensor.pollen_grass_risk
         type: custom:multiple-entity-row
         name: Grasses
+        state_header: risk
         styles:
           width: 60px
         entities:
         - entity: sensor.pollen_grass
+          name: level
           styles:
             text-align: left
       - entity: sensor.pollen_tree_risk
         type: custom:multiple-entity-row
         name: Trees
+        state_header: risk
         styles:
           width: 60px
         entities:
         - entity: sensor.pollen_tree
+          name: level
           styles:
             text-align: left
       - entity: sensor.pollen_weed_risk
         type: custom:multiple-entity-row
         name: Weeds
+        state_header: risk
         styles:
           width: 60px
         entities:
         - entity: sensor.pollen_weed
+          name: level
           styles:
             text-align: left
     
