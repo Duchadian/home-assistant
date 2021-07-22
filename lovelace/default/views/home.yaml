@@ -17,13 +17,11 @@ cards:
           - icon: mdi:lightbulb-off-outline
             tap_action:
               action: call-service
-              service: timer.cancel
-              target:
-                entity_id: timer.laundry
+              service: script.turn_off_laundry_timer
           - icon: mdi:lightbulb-outline
             tap_action:
               action: call-service
-              service: script.call_laundry_timer
+              service: script.turn_on_laundry_timer
       - entity: input_number.laundry_slider
         name: "Laundry timer time"
       - type: section
