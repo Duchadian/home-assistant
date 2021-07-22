@@ -18,7 +18,6 @@ cards:
             tap_action:
               action: call-service
               service: timer.cancel
-              service_data: {}
               target:
                 entity_id: timer.laundry
           - icon: mdi:lightbulb-outline
