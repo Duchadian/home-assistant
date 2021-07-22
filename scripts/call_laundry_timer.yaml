@@ -3,4 +3,5 @@ sequence:
     service: timer.start
     data:
       duration: "{{ states('input_number.laundry_timer') | int * 60 }}"
-    target: timer.laundry
+    target: 
+      entity_id: timer.laundry
