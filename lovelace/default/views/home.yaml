@@ -13,6 +13,7 @@ cards:
         type: custom:multiple-entity-row
         name: "Laundry timer state"
         entities:
+          - entity: timer.laundry
           - icon: mdi:lightbulb-off-outline
             tap_action:
               action: call-service
@@ -23,11 +24,7 @@ cards:
           - icon: mdi:lightbulb-outline
             tap_action:
               action: call-service
-              service: timer.start
-              service_data:
-                duration: "{{ states.input_number.laundry_slider | int * 60 }}"
-              target:
-                entity_id: timer.laundry
+              service: script.call_laundry_timer
       - entity: input_number.laundry_slider
         name: "Laundry timer time"
       - type: section

@@ -42,7 +42,7 @@ media_extractor:
 
 group: !include groups.yaml
 automation: !include automations.yaml
-script: !include scripts.yaml
+script: !include_dir_named scripts
 input_boolean: !include_dir_named input_boolean
 input_number: !include_dir_named input_number
 input_text: !include_dir_named input_text
