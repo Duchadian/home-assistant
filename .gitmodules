@@ -1,0 +1,4 @@
+[submodule "custom_components/matrix"]
+	path = custom_components/matrix
+	url = git@github.com:Duchadian/core.git
+	branch = matrix_only
