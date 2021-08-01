@@ -8,6 +8,8 @@ cards:
     type: shopping-list
   - type: entities
     entities:
+      - entity: switch.garage_door_relay
+      - type: section
       - entity: timer.laundry
         icon: mdi:washing-machine
         type: custom:multiple-entity-row
