@@ -16,6 +16,8 @@ cards:
       - sensor.dsmr_consumption_gas_currently_delivered
       - sensor.dsmr_reading_electricity_currently_delivered
       - sensor.dsmr_reading_electricity_currently_returned
+  - type: energy-distribution
+    link_dashboard: true
   - type: entities
     title: "Hassos sensors"
     entities:
