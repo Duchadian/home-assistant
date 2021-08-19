@@ -16,12 +16,6 @@ cards:
       - sensor.dsmr_consumption_gas_currently_delivered
       - sensor.dsmr_reading_electricity_currently_delivered
       - sensor.dsmr_reading_electricity_currently_returned
-  - type: custom:power-wheel-card
-    title: "Power usage and delivery"
-    solar_power_entity: sensor.solaredge_current_power_kwh
-    grid_power_consumption_entity: sensor.dsmr_reading_electricity_currently_delivered
-    grid_power_production_entity: sensor.dsmr_reading_electricity_currently_returned
-    power_decimals: 3
   - type: entities
     title: "Hassos sensors"
     entities:
