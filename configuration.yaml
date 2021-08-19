@@ -48,6 +48,7 @@ input_number: !include_dir_named input_number
 input_text: !include_dir_named input_text
 timer: !include_dir_named timer
 notify: !include_dir_list notify
+utility_meter: !include_dir_named utility_meter
 
 webostv:
   name: TV
