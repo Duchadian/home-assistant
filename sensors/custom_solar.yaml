@@ -1,6 +1,6 @@
 platform: template
 sensors:
-  solaredge_current_power_kwh:
+  solaredge_current_power_kw:
     value_template: "{{ (states('sensor.solaredge_current_power') | float / 1000) | round(2) }}"
     unit_of_measurement: "kW"
     icon_template: "mdi:solar_power"

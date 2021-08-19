@@ -1,0 +1,2 @@
+source: sensor.solaredge_current_power_kw
+cycle: daily

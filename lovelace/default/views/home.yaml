@@ -8,35 +8,91 @@ cards:
     type: shopping-list
   - type: entities
     entities:
-      - sensor.afvalwijzer_gft
-      - sensor.afvalwijzer_papier
-      - sensor.afvalwijzer_plastic
-      - sensor.afvalwijzer_restafval
+      - entity: switch.garage_door_relay
+      - type: section
+      - entity: timer.laundry
+        icon: mdi:washing-machine
+        type: custom:multiple-entity-row
+        name: "Laundry timer state"
+        entities:
+          - entity: timer.laundry
+          - icon: mdi:lightbulb-off-outline
+            tap_action:
+              action: call-service
+              service: script.turn_off_laundry_timer
+          - icon: mdi:lightbulb-outline
+            tap_action:
+              action: call-service
+              service: script.turn_on_laundry_timer
+      - entity: input_number.laundry_slider
+        name: "Laundry timer time"
+      - type: section
+      - entity: sensor.afvalwijzer_gft
+        type: custom:multiple-entity-row
+        name: gft
+        show_state: false
+        entities:
+          - attribute: days_until_collection_date
+            name: Days until collection
+            styles:
+              text-align: right
+      - entity: sensor.afvalwijzer_papier
+        type: custom:multiple-entity-row
+        name: papier
+        show_state: false
+        entities:
+          - attribute: days_until_collection_date
+            styles:
+              text-align: right
+      - entity: sensor.afvalwijzer_plastic
+        type: custom:multiple-entity-row
+        name: plastic
+        show_state: false
+        entities:
+          - attribute: days_until_collection_date
+            styles:
+              text-align: right
+      - entity: sensor.afvalwijzer_restafval
+        type: custom:multiple-entity-row
+        name: restafval
+        show_state: false
+        entities:
+          - attribute: days_until_collection_date
+            styles:
+              text-align: right
       - input_boolean.waste_moved
-    title: Trash
-  - type: button
-    entity: timer.laundry
-    icon: mdi:washing-machine
-    name: Start laundry timer
-    show_state: true
-    tap_action:
-      action: call-service
-      service: timer.start
-      service_data:
-        duration: >
-          {{ states('input_number.laundry_slider') | multiply(60) | int }}
-      target:
-        entity_id: timer.laundry
-    hold_action:
-      action: call-service
-      service: timer.cancel
-      service_data: {}
-      target:
-        entity_id: timer.laundry
-  - type: entities
-    entities:
-      - input_number.laundry_slider
-  - type: 'custom:weather-card-chart'
-    title: Weather
-    weather: weather.openweathermap
-    mode: hourly
+      - type: section
+      - entity: sensor.pollen_grass_risk
+        type: custom:multiple-entity-row
+        name: Grasses
+        state_header: risk
+        styles:
+          width: 60px
+        entities:
+        - entity: sensor.pollen_grass
+          name: level
+          styles:
+            text-align: right
+      - entity: sensor.pollen_tree_risk
+        type: custom:multiple-entity-row
+        name: Trees
+        state_header: risk
+        styles:
+          width: 60px
+        entities:
+        - entity: sensor.pollen_tree
+          name: level
+          styles:
+            text-align: right
+      - entity: sensor.pollen_weed_risk
+        type: custom:multiple-entity-row
+        name: Weeds
+        state_header: risk
+        styles:
+          width: 60px
+        entities:
+        - entity: sensor.pollen_weed
+          name: level
+          styles:
+            text-align: right
+    
