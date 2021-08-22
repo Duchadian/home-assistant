@@ -9,12 +9,13 @@ cards:
       - sensor.dsmr_reading_electricity_currently_delivered
       - sensor.dsmr_reading_electricity_currently_returned
   - type: statistics-graph
-    title: solar
+    title: Solar
     entities:
       - sensor.solaredge_current_power
     chart_type: line
     stat_types:
       - 'mean'
+    days_to_show: 7
   - type: entities
     title: "Hassos sensors"
     entities:
