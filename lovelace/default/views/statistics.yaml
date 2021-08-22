@@ -11,7 +11,8 @@ cards:
   - type: statistics-graph
     title: Solar
     entities:
-      - sensor.solaredge_current_power
+      - entity: sensor.solaredge_current_power
+        name: "Solar production"
     chart_type: line
     stat_types:
       - 'mean'
