@@ -8,6 +8,13 @@ cards:
       - sensor.dsmr_consumption_gas_currently_delivered
       - sensor.dsmr_reading_electricity_currently_delivered
       - sensor.dsmr_reading_electricity_currently_returned
+  - type: statistics-graph
+    title: solar
+    entities:
+      - sensor.solaredge_current_power
+    chart_type: line
+    stat_types:
+      - 'mean'
   - type: entities
     title: "Hassos sensors"
     entities:
