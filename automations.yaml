@@ -28,41 +28,6 @@
       data:
         title: "Afval"
         message: 'Het is vandaag - {{ now().strftime("%d-%m-%Y") }}. Afvaltype(n): {{ states.sensor.afvalwijzer_tomorrow.state }} wordt opgehaald op: {{ (as_timestamp(now()) + (24*3600)) | timestamp_custom("%d-%m-%Y", True) }}!'
-- alias: "Send the shopping list"
-  trigger:
-    platform: event
-    event_type: matrix_command
-    event_data:
-      command: get_shopping_list
-  action:
-    service: notify.matrix_home
-    data:
-      message: >
-        On the shopping list are:
-        {% for item in states("sensor.shopping_list_items").split("\n") %}
-          - {{ item.strip('"') }}
-        {% endfor %}
-      target: "{{ trigger.event.data['room'] }}"
-- alias: "Add to shopping list"
-  trigger:
-    platform: event
-    event_type: matrix_command
-    event_data:
-      command: add_shopping_list_item
-  action:
-    service: shopping_list.add_item
-    data:
-      name: "{{ trigger.event.data.args.item }}"
-- alias: "Laundry is done"
-  trigger:
-  - platform: event
-    event_type: timer.finished
-    event_data:
-      entity_id: timer.laundry
-  action:
-  - service: notify.matrix_home
-    data:
-      message: "The laundry should be done!"
 - alias: "Respond to door"
   trigger:
     platform: state

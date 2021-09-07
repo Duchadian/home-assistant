@@ -17,7 +17,6 @@ homeassistant:
 
 # Configure a default setup of Home Assistant (frontend, api, etc)
 default_config:
-# change the default stuff cause some of it is not used
 
 # custom stuff
 lovelace: !include lovelace/lovelace.yaml
@@ -76,11 +75,6 @@ matrix:
   rooms:
     - !secret matrix_home_room
     - !secret matrix_test_room
-  commands:
-    - word: sl
-      name: get_shopping_list
-    - expression: "[Aa]dd (?P<item>.*) to shopping list"
-      name: add_shopping_list_item
 
 downloader:
   download_dir: downloads
