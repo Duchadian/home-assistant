@@ -1,5 +1,5 @@
 sequence:
   - alias: "Call script service with specified time"
     service: timer.cancel
-    target: 
+    target:
       entity_id: timer.laundry
