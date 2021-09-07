@@ -40,7 +40,7 @@ media_extractor:
   default_query: best
 
 group: !include groups.yaml
-automation: !include automations.yaml
+automation: !include_dir_list automations
 script: !include_dir_named scripts
 input_boolean: !include_dir_named input_boolean
 input_number: !include_dir_named input_number

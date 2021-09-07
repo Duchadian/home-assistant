@@ -1,0 +1,18 @@
+alias: "Respond to door"
+trigger:
+  platform: state
+  entity_id: binary_sensor.doorbell_doorbell_pressed
+  from: "off"
+  to: "on"
+action:
+  - service: downloader.download_file
+    data:
+      url: "{{ states('input_text.base_url') }}/api/camera_proxy/camera.doorbell_last_event?token={{ state_attr('camera.doorbell_last_event', 'access_token') }}"
+      filename: "last_event.jpg"
+      overwrite: true
+  - service: notify.matrix_home
+    data:
+      message: "There is someone at the door!"
+      data:
+        images:
+          - '/config/downloads/last_event.jpg'

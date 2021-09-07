@@ -1,0 +1,10 @@
+alias: Reset waste notification
+trigger:
+  platform: state
+  entity_id: input_boolean.waste_moved
+  to: 'on'
+for:
+  hours: 12
+action:
+- service: input_boolean.turn_off
+  entity_id: input_boolean.waste_moved
