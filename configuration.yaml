@@ -49,33 +49,8 @@ timer: !include_dir_named timer
 notify: !include_dir_list integrations/notify
 utility_meter: !include_dir_named integrations/utility_meter
 proxmoxve: !include_dir_list integrations/proxmoxve
-
-webostv:
-  name: TV
-  host: !secret tv_url
-  turn_on_action:
-    service: wake_on_lan.send_magic_packet
-    data:
-      mac: !secret tv_mac
-  customize:
-    sources:
-      - "Streambox"
-      - "Decoder"
-      - "Pc"
-      - "YouTube"
-      - "Netflix"
-      - "Spotify: muziek en podcasts"
-      - "Amazon Prime Video"
-      - "Disney+"
-      - "Videoland"
-
-matrix:
-  homeserver: !secret matrix_homeserver
-  username: !secret matrix_username
-  password: !secret matrix_password
-  rooms:
-    - !secret matrix_home_room
-    - !secret matrix_test_room
+webostv: !include integrations/webostv.yaml
+matrix: !include integrations/matrix.yaml
 
 downloader:
   download_dir: downloads
