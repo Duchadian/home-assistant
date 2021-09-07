@@ -46,8 +46,9 @@ input_boolean: !include_dir_named input_boolean
 input_number: !include_dir_named input_number
 input_text: !include_dir_named input_text
 timer: !include_dir_named timer
-notify: !include_dir_list notify
-utility_meter: !include_dir_named utility_meter
+notify: !include_dir_list integrations/notify
+utility_meter: !include_dir_named integrations/utility_meter
+proxmoxve: !include_dir_list integrations/proxmoxve
 
 webostv:
   name: TV
