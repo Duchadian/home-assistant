@@ -278,7 +278,7 @@ class LgRemoteControl extends LitElement {
                     <button class="${stateObj.attributes.source === source ? 'btn-input-on' : 'btn-input  ripple overlay'}" @click=${() => {
                         this._select_source(source);
                         this._show_inputs = false;
-                    }}}>${source}</button>
+                    }}>${source}</button>
                     `)}
                   </div>
 <!-- ################################# SOURCES END ################################# -->
@@ -415,8 +415,10 @@ class LgRemoteControl extends LitElement {
     }
 
     _channelList() {
-        this.hass.callService("browser_mod", "popup",
-            {
+        const popupEvent = new Event('ll-custom', {bubbles: true, cancelable: false, composed: true});
+        popupEvent.detail = {
+            "browser_mod": {
+                "command": "popup",
                 "card": {
                     "type": "custom:card-channel-pad",
                     "entity": this.config.entity,
@@ -428,7 +430,8 @@ class LgRemoteControl extends LitElement {
                     "border-radius": "15px"
                 }
             }
-        )
+        };
+        this.ownerDocument.querySelector("home-assistant").dispatchEvent(popupEvent);
     }
 
     _button(button) {
