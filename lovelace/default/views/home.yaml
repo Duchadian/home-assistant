@@ -10,6 +10,9 @@ cards:
     entities:
       - entity: switch.garage_door_relay
       - type: section
+      - entity: light.bf100a48e460d6fa3eoll8
+        name: "Hallway light"
+      - type: section
       - entity: timer.laundry
         icon: mdi:washing-machine
         type: custom:multiple-entity-row
