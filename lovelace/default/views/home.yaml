@@ -12,6 +12,10 @@ cards:
       - type: section
       - entity: light.bf100a48e460d6fa3eoll8
         name: "Hallway light"
+      - entity: light.bfa23edd02ab1593f2gxra
+        name: "Couch light"
+      - entity: light.bfa6676ba2fe5dc8aahbja
+        name: "Dining table light"
       - type: section
       - entity: timer.laundry
         icon: mdi:washing-machine
