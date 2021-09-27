@@ -5,9 +5,11 @@ cards:
   - type: entities
     title: "Meter readings"
     entities:
-      - sensor.dsmr_consumption_gas_currently_delivered
-      - sensor.dsmr_reading_electricity_currently_delivered
-      - sensor.dsmr_reading_electricity_currently_returned
+      - sensor.gas_consumption
+      - sensor.energy_consumption_tarif_1
+      - sensor.energy_consumption_tarif_2
+      - sensor.energy_production_tarif_1
+      - sensor.energy_production_tarif_2
   - type: statistics-graph
     title: Solar
     entities:
