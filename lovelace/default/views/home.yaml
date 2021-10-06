@@ -10,11 +10,11 @@ cards:
     entities:
       - entity: switch.garage_door_relay
       - type: section
-      - entity: light.bf100a48e460d6fa3eoll8
+      - entity: light.hallway
         name: "Hallway light"
-      - entity: light.272258615002912035ce
+      - entity: light.couch
         name: "Couch light"
-      - entity: light.bfa6676ba2fe5dc8aahbja
+      - entity: light.dining_table
         name: "Dining table light"
       - entity: light.bedroom_lights
         name: "Bedroom lights"
