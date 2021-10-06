@@ -1,6 +1,6 @@
 platform: group
 name: "Bedroom lights"
 entities:
-  - light.bfa23edd02ab1593f2gxra
-  - light.bfff23facd9f643ae2apgh
-  - light.70070023d8f15bbd202c
+  - light.bedroom_1
+  - light.bedroom_2
+  - light.bedroom_3
