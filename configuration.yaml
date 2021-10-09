@@ -55,3 +55,8 @@ light: !include_dir_list lights
 
 downloader:
   download_dir: downloads
+
+logger:
+  default: critical
+  logs:
+    custom_components.tuya_v2: debug
