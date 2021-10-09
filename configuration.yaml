@@ -51,6 +51,7 @@ utility_meter: !include_dir_named integrations/utility_meter
 proxmoxve: !include_dir_list integrations/proxmoxve
 webostv: !include integrations/webostv.yaml
 matrix: !include integrations/matrix.yaml
+light: !include_dir_list lights
 
 downloader:
   download_dir: downloads
