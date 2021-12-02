@@ -26,7 +26,7 @@ python_script:
 http:
   use_x_forwarded_for: true
   trusted_proxies:
-    - !secret proxy_ip
+    - 172.30.33.0/24
 
 # Discover some devices automatically
 discovery:
@@ -55,3 +55,8 @@ light: !include_dir_list lights
 
 downloader:
   download_dir: downloads
+
+logger:
+  default: critical
+  logs:
+    homeassistant.components.tuya: debug
