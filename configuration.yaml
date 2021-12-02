@@ -59,5 +59,3 @@ downloader:
 
 logger:
   default: critical
-  logs:
-    homeassistant.components.tuya: debug
