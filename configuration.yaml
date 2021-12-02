@@ -52,7 +52,7 @@ proxmoxve: !include_dir_list integrations/proxmoxve
 webostv: !include integrations/webostv.yaml
 matrix: !include integrations/matrix.yaml
 light: !include_dir_list lights
-scenes: !include_dir_list scenes
+scene: !include_dir_list scenes
 
 downloader:
   download_dir: downloads
