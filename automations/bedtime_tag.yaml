@@ -1,0 +1,10 @@
+id: '1638478759228'
+alias: Tag bedtime is scanned
+description: ''
+trigger:
+- platform: tag
+  tag_id: aeb077f2-0b8a-4c26-a648-66c0a2de8c05
+condition: []
+action:
+- scene: scene.bedtime
+mode: single
