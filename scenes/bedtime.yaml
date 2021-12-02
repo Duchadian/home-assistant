@@ -1,0 +1,39 @@
+id: '1638477635725'
+name: Bedtime
+entities:
+  light.couch:
+    min_mireds: 153
+    max_mireds: 500
+    supported_color_modes:
+    - brightness
+    - color_temp
+    - onoff
+    friendly_name: Couch
+    supported_features: 0
+    state: 'off'
+  light.dining_table:
+    min_mireds: 153
+    max_mireds: 500
+    supported_color_modes:
+    - brightness
+    - color_temp
+    - onoff
+    friendly_name: Dining Table
+    supported_features: 0
+    state: 'off'
+  light.bedroom_lights:
+    min_mireds: 153
+    max_mireds: 500
+    supported_color_modes:
+    - brightness
+    - color_temp
+    - onoff
+    entity_id:
+    - light.bedroom_1
+    - light.bedroom_2
+    - light.bedroom_3
+    friendly_name: Bedroom lights
+    icon: mdi:lightbulb-group
+    supported_features: 0
+    state: 'off'
+icon: mdi:moon-waning-crescent
