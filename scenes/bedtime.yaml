@@ -1,6 +1,16 @@
 id: '1638477635725'
 name: Bedtime
 entities:
+  light.hallway:
+    min_mireds: 153
+    max_mireds: 500
+    supported_color_modes:
+    - brightness
+    - color_temp
+    - onoff
+    friendly_name: Hallway
+    supported_features: 0
+    state: 'off'
   light.couch:
     min_mireds: 153
     max_mireds: 500
