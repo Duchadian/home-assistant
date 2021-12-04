@@ -1,0 +1,12 @@
+- id: '1638621901517'
+  alias: Tag garage door is scanned
+  description: ''
+  trigger:
+  - platform: tag
+    tag_id: 3931a81d-a235-4e0f-a0fd-196009651942
+  condition: []
+  action:
+  - service: switch.turn_on
+    target:
+      entity_id: switch.garage_door_relay
+  mode: single
