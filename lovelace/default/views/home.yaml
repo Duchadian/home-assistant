@@ -19,6 +19,8 @@ cards:
         name: "Dining table light"
       - entity: light.bedroom_lights
         name: "Bedroom lights"
+      - entity: light.elements_54ab
+        name: "Nanoleaf"
       - type: section
       - entity: sensor.afvalwijzer_gft
         type: custom:multiple-entity-row
