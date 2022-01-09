@@ -19,12 +19,9 @@ cards:
         name: "Dining table light"
       - entity: light.bedroom_lights
         name: "Bedroom lights"
-        type: custom:multiple-entity-row
-        show_state: true
-        entities:
-          - entity: light.bedroom_1
-          - entity: light.bedroom_2
-          - entity: light.bedroom_3
+      - entity: light.bedroom_1
+      - entity: light.bedroom_2
+      - entity: light.bedroom_3
       - entity: light.elements_54ab
         name: "Nanoleaf"
       - type: section
