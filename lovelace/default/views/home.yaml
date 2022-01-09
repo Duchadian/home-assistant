@@ -19,6 +19,12 @@ cards:
         name: "Dining table light"
       - entity: light.bedroom_lights
         name: "Bedroom lights"
+        type: custom:multiple-entity-row
+        show_state: true
+        entities:
+          - entity: light.bedroom_1
+          - entity: light.bedroom_2
+          - entity: light.bedroom_3
       - entity: light.elements_54ab
         name: "Nanoleaf"
       - type: section
@@ -56,38 +62,3 @@ cards:
             styles:
               text-align: right
       - input_boolean.waste_moved
-#      - type: section
-#      - entity: sensor.pollen_grass_risk
-#        type: custom:multiple-entity-row
-#        name: Grasses
-#        state_header: risk
-#        styles:
-#          width: 60px
-#        entities:
-#        - entity: sensor.pollen_grass
-#          name: level
-#          styles:
-#            text-align: right
-#      - entity: sensor.pollen_tree_risk
-#        type: custom:multiple-entity-row
-#        name: Trees
-#        state_header: risk
-#        styles:
-#          width: 60px
-#        entities:
-#        - entity: sensor.pollen_tree
-#          name: level
-#          styles:
-#            text-align: right
-#      - entity: sensor.pollen_weed_risk
-#        type: custom:multiple-entity-row
-#        name: Weeds
-#        state_header: risk
-#        styles:
-#          width: 60px
-#        entities:
-#        - entity: sensor.pollen_weed
-#          name: level
-#          styles:
-#            text-align: right
-#
