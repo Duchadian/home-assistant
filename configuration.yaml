@@ -52,11 +52,10 @@ proxmoxve: !include_dir_list integrations/proxmoxve
 webostv: !include integrations/webostv.yaml
 matrix: !include integrations/matrix.yaml
 light: !include_dir_list lights
+scene: !include_dir_list scenes
 
 downloader:
   download_dir: downloads
 
 logger:
   default: critical
-  logs:
-    homeassistant.components.tuya: debug

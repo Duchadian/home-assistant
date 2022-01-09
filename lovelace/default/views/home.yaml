@@ -19,23 +19,8 @@ cards:
         name: "Dining table light"
       - entity: light.bedroom_lights
         name: "Bedroom lights"
-      - type: section
-      - entity: timer.laundry
-        icon: mdi:washing-machine
-        type: custom:multiple-entity-row
-        name: "Laundry timer state"
-        entities:
-          - entity: timer.laundry
-          - icon: mdi:lightbulb-off-outline
-            tap_action:
-              action: call-service
-              service: script.turn_off_laundry_timer
-          - icon: mdi:lightbulb-outline
-            tap_action:
-              action: call-service
-              service: script.turn_on_laundry_timer
-      - entity: input_number.laundry_slider
-        name: "Laundry timer time"
+      - entity: light.elements_54ab
+        name: "Nanoleaf"
       - type: section
       - entity: sensor.afvalwijzer_gft
         type: custom:multiple-entity-row
