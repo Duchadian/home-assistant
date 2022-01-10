@@ -1,0 +1,10 @@
+- type: grid
+  cards:
+    - type: light
+      entity: light.bedroom_lights
+    - type: light
+      entity: light.bedroom_1
+    - type: light
+      entity: light.bedroom_2
+    - type: light
+      entity: light.bedroom_3
