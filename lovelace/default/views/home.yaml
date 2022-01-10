@@ -1,5 +1,6 @@
 title: Home
 path: home
+type: panel
 badges:
   - entity: person.tim
   - entity: person.sabine
