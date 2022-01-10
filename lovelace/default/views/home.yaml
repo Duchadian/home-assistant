@@ -4,6 +4,4 @@ badges:
   - entity: person.tim
   - entity: person.sabine
 cards:
-  - type: horizontal-stack
-    cards:
-      !include_dir_merge_list ../cards/home/
+  !include_dir_merge_list ../cards/home/
