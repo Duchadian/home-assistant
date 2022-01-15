@@ -1,14 +1,10 @@
 - type: grid
   cards:
-    - type: entities
-      entities:
-      - light.bedroom_lights
-    - type: entities
-      entities: 
-        - light.bedroom_1
-    - type: entities
-      entities: 
-        - light.bedroom_2
-    - type: entities
-      entities: 
-        - light.bedroom_3
+    - type: button
+      entity: light.bedroom_lights
+    - type: button
+      entity: light.bedroom_1
+    - type: button
+      entity: light.bedroom_2
+    - type: button
+      entity: light.bedroom_3
