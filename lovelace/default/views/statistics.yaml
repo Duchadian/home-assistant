@@ -1,6 +1,8 @@
 title: Statistics
 path: statistics
-badges: []
+badges: 
+  - entity: binary_sensor.proxmox_matrix_running
+  - entity: binary_sensor.proxmox_turing_running
 cards:
   - type: entities
     title: "Meter readings"
