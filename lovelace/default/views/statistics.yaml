@@ -29,6 +29,3 @@ cards:
       - sensor.load_15m
       - sensor.memory_use_percent
       - sensor.disk_use_percent
-  - type: energy-distribution
-    link_dashboard: true
-  - type: energy-usage-graph
