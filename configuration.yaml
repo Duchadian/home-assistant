@@ -53,6 +53,7 @@ webostv: !include integrations/webostv.yaml
 matrix: !include integrations/matrix.yaml
 light: !include_dir_list lights
 scene: !include_dir_list scenes
+switch: !include_dir_list switches
 
 downloader:
   download_dir: downloads
