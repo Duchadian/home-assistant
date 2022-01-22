@@ -23,7 +23,6 @@ cards:
     title: "Hassos sensors"
     entities:
       - sensor.load_15m
-      - sensor.processor_temperature
       - sensor.memory_use_percent
       - sensor.disk_use_percent
   - type: energy-distribution
