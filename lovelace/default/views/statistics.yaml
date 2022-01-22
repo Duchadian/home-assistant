@@ -2,7 +2,9 @@ title: Statistics
 path: statistics
 badges: 
   - entity: binary_sensor.proxmox_matrix_running
+    name: matrix
   - entity: binary_sensor.proxmox_turing_running
+    name: turing
 cards:
   - type: entities
     title: "Meter readings"
