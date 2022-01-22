@@ -1,2 +1,4 @@
 platform: wake_on_lan
 mac: !secret desktop_mac
+name: desktop-wol
+broadcast_address: 255.255.255.255
