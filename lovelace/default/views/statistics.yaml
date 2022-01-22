@@ -9,6 +9,12 @@ cards:
   - type: entities
     title: "Meter readings"
     entities:
+      - sensor.gas_consumption_daily
+      - sensor.energy_consumption_tarif_1_daily
+      - sensor.energy_consumption_tarif_2_daily
+      - sensor.energy_production_tarif_1_daily
+      - sensor.energy_production_tarif_2_daily
+      - type: section
       - sensor.gas_consumption
       - sensor.energy_consumption_tarif_1
       - sensor.energy_consumption_tarif_2
