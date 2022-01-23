@@ -1,0 +1,8 @@
+- type: button
+  entity: binary_sensor.desktop
+  name: "Desktop"
+  tap_action:
+    action: call_service
+    service: switch.turn_on
+    service_data:
+      entity_id: switch.wake_on_lan
