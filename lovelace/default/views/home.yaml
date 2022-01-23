@@ -1,5 +1,5 @@
 title: Home
-icon: home
+icon: hass:home
 path: home
 badges:
   - entity: person.tim
