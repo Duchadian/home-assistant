@@ -1,5 +1,6 @@
 title: TV
 path: default_view
+icon: hass:remote
 panel: true
 badges: []
 cards:
