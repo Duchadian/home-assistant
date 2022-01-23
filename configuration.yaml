@@ -54,6 +54,7 @@ matrix: !include integrations/matrix.yaml
 light: !include_dir_list lights
 scene: !include_dir_list scenes
 switch: !include_dir_list switches
+binary_sensor: !include_dir_list binary_sensors
 
 downloader:
   download_dir: downloads
