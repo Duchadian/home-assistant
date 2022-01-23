@@ -1,6 +1,7 @@
 title: Statistics
 path: statistics
-badges: 
+icon: mdi:cog
+badges:
   - entity: binary_sensor.proxmox_matrix_running
     name: matrix
   - entity: binary_sensor.proxmox_turing_running
