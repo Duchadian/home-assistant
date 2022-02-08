@@ -46,15 +46,18 @@ input_boolean: !include_dir_named input_boolean
 input_number: !include_dir_named input_number
 input_text: !include_dir_named input_text
 timer: !include_dir_named timer
+light: !include_dir_list lights
+scene: !include_dir_list scenes
+switch: !include_dir_list switches
+binary_sensor: !include_dir_list binary_sensors
+
+# integrations
 notify: !include_dir_list integrations/notify
 utility_meter: !include_dir_named integrations/utility_meter
 proxmoxve: !include_dir_list integrations/proxmoxve
 webostv: !include integrations/webostv.yaml
 matrix: !include integrations/matrix.yaml
-light: !include_dir_list lights
-scene: !include_dir_list scenes
-switch: !include_dir_list switches
-binary_sensor: !include_dir_list binary_sensors
+influxdb: !include integrations/influxdb.yaml
 
 downloader:
   download_dir: downloads
