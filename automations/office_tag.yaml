@@ -1,0 +1,13 @@
+- id: '1644479856394'
+  alias: Office tag
+  description: ''
+  trigger:
+  - platform: tag
+    tag_id: 3a288fa5-f6cd-445d-b194-f1650db9ca8d
+  condition: []
+  action:
+  - service: switch.turn_on
+    data: {}
+    target:
+      entity_id: switch.wake_on_lan
+  mode: single
