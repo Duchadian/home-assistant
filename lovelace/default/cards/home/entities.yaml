@@ -1,7 +1,6 @@
 - type: entities
   entities:
-    - entity: switch.garage_door_relay
-    - entity: binary_sensor.garage_door
+    - entity: cover.garage_door
     - type: section
     - entity: light.hallway
       name: "Hallway light"
