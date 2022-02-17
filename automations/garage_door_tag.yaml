@@ -6,7 +6,7 @@ trigger:
   tag_id: 3931a81d-a235-4e0f-a0fd-196009651942
 condition: []
 action:
-- service: switch.turn_on
+- service: cover.toggle
   target:
-    entity_id: switch.garage_door_relay
+    entity_id: cover.garage_door
 mode: single
