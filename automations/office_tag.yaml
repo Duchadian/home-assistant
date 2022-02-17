@@ -7,7 +7,6 @@ trigger:
 condition: []
 action:
 - service: switch.turn_on
-  data: {}
   target:
     entity_id: switch.wake_on_lan
 mode: single
