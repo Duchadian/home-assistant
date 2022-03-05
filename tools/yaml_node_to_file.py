@@ -39,10 +39,10 @@ def main(args: list[str]):
                 name = f"{dump_path}/{normalise_file_name(item['title'])}.yaml"
 
                 if args.mode == 'debug':
-                    print(name, yaml.dump(item))
+                    print(name, yaml.dump([item]))
                 else:
                     with open(name, "w") as w:
-                        yaml.dump(item, w)
+                        yaml.dump([item], w)
 
 
 if __name__ == "__main__":
