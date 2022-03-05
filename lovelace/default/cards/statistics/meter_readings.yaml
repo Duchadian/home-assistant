@@ -1,0 +1,15 @@
+entities:
+- sensor.gas_consumption_daily
+- sensor.energy_consumption_tarif_1_daily
+- sensor.energy_consumption_tarif_2_daily
+- sensor.energy_production_tarif_1_daily
+- sensor.energy_production_tarif_2_daily
+- sensor.solaredge_current_power
+- type: section
+- sensor.gas_consumption
+- sensor.energy_consumption_tarif_1
+- sensor.energy_consumption_tarif_2
+- sensor.energy_production_tarif_1
+- sensor.energy_production_tarif_2
+title: Meter readings
+type: entities

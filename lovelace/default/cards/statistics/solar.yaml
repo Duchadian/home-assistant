@@ -1,0 +1,9 @@
+chart_type: line
+days_to_show: 7
+entities:
+- entity: sensor.solaredge_current_power
+  name: Solar production
+stat_types:
+- mean
+title: Solar
+type: statistics-graph

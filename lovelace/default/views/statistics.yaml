@@ -7,33 +7,4 @@ badges:
   - entity: binary_sensor.proxmox_turing_running
     name: turing
 cards:
-  - type: entities
-    title: "Meter readings"
-    entities:
-      - sensor.gas_consumption_daily
-      - sensor.energy_consumption_tarif_1_daily
-      - sensor.energy_consumption_tarif_2_daily
-      - sensor.energy_production_tarif_1_daily
-      - sensor.energy_production_tarif_2_daily
-      - sensor.solaredge_current_power
-      - type: section
-      - sensor.gas_consumption
-      - sensor.energy_consumption_tarif_1
-      - sensor.energy_consumption_tarif_2
-      - sensor.energy_production_tarif_1
-      - sensor.energy_production_tarif_2
-  - type: statistics-graph
-    title: Solar
-    entities:
-      - entity: sensor.solaredge_current_power
-        name: "Solar production"
-    chart_type: line
-    stat_types:
-      - 'mean'
-    days_to_show: 7
-  - type: entities
-    title: "Hassos sensors"
-    entities:
-      - sensor.load_15m
-      - sensor.memory_use_percent
-      - sensor.disk_use_percent
+  !include_dir_merge_list ../cards/statistics/
