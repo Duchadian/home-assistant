@@ -1,0 +1,10 @@
+platform: template
+covers:
+  garage_door:
+    friendly_name: "Garage Door"
+    open_cover:
+      service: switch.turn_on
+      entity_id: switch.2_carport_channel_1
+    close_cover:
+      service: switch.turn_on
+      entity_id: switch.2_carport_channel_2

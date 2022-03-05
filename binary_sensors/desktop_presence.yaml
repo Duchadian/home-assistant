@@ -1,0 +1,4 @@
+platform: ping
+host: !secret desktop_host
+name: desktop
+scan_interval: 30
