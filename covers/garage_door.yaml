@@ -3,8 +3,6 @@ covers:
   garage_door:
     friendly_name: "Garage Door"
     open_cover:
-      service: switch.turn_on
-      entity_id: switch.2_carport_channel_1
+      service: script.open_carport
     close_cover:
-      service: switch.turn_on
-      entity_id: switch.2_carport_channel_2
+      service: script.close_carport
