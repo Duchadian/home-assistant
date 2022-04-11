@@ -1,0 +1,3 @@
+[submodule "submodules/afvalwijzer"]
+	path = submodules/afvalwijzer
+	url = git@github.com:xirixiz/homeassistant-afvalwijzer.git
