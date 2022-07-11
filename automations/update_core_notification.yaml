@@ -1,0 +1,15 @@
+alias: Waste has not been moved
+trigger:
+  - platform: time
+    at: "11:00:00"
+condition:
+  condition: and
+  conditions:
+    - condition: state
+      entity_id: update.home_assistant_core_update
+      state: 'on'
+action:
+  - service: notify.matrix_monitoring
+    data:
+      title: "Update available"
+      message: 'Home Assistant core can be updated! Current version is {{ update.home_assistant_core_update.installed_version }}, new version is {{ update.home_assistant_core_update.latest_version }}'
