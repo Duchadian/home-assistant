@@ -1,4 +1,4 @@
-alias: Waste has not been moved
+alias: Update Core
 trigger:
   - platform: time
     at: "11:00:00"
