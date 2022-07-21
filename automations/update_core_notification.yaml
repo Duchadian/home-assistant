@@ -7,7 +7,7 @@ condition:
   condition: and
   conditions:
     - condition: state
-      entity_id: update.home_assistant_core_update
+      entity_id: 'update.home_assistant_core_update'
       state: 'on'
 action:
   - service: notify.matrix_monitoring
