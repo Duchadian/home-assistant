@@ -14,7 +14,7 @@ homeassistant:
   customize: !include customize.yaml
   allowlist_external_dirs:
     - '/config/downloads'
-    - '/config/www/**/*.js'
+    - '/config/www/vacuum-card/vacuum-card.js'
 
 # Configure a default setup of Home Assistant (frontend, api, etc)
 default_config:
