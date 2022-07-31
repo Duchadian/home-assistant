@@ -1,0 +1,32 @@
+title: Vacuum
+path: default_view
+icon: mdi:robot-vacuum
+panel: true
+badges: []
+cards:
+  - type: 'custom:vacuum-card'
+    entity: vacuum.roborock_vacuum_a38
+    actions: []
+    stats:
+      default:
+        - attribute: filter_left
+          unit: hours
+          subtitle: Filter
+        - attribute: side_brush_left
+          unit: hours
+          subtitle: Side brush
+        - attribute: main_brush_left
+          unit: hours
+          subtitle: Main brush
+        - attribute: sensor_dirty_left
+          unit: hours
+          subtitle: Sensors
+      cleaning:
+        - entity_id: sensor.vacuum_main_brush_left
+          value_template: '{{ (value | float(0) / 3600) | round(1) }}'
+          subtitle: Main brush
+          unit: hours
+        - attribute: cleaning_time
+          unit: minutes
+          subtitle: Cleaning time
+    shortcuts: []
