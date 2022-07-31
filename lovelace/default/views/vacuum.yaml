@@ -1,5 +1,5 @@
 title: Vacuum
-path: default_view
+path: vacuum
 icon: mdi:robot-vacuum
 panel: true
 badges: []
