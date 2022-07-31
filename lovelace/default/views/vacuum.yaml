@@ -2,11 +2,9 @@ title: Vacuum
 path: vacuum
 icon: mdi:robot-vacuum
 panel: true
-badges: []
 cards:
   - type: 'custom:vacuum-card'
     entity: vacuum.roborock_vacuum_a38
-    actions: []
     stats:
       default:
         - attribute: filter_left
@@ -29,4 +27,3 @@ cards:
         - attribute: cleaning_time
           unit: minutes
           subtitle: Cleaning time
-    shortcuts: []
