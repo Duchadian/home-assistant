@@ -10,3 +10,5 @@ resources:
     type: module
   - url: /local/multiple-entity-row/multiple-entity-row.js?v=4.2.0
     type: module
+  - url: /local/vacuum-card/vacuum-card.js
+    type: module
