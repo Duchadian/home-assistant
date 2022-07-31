@@ -14,6 +14,7 @@ homeassistant:
   customize: !include customize.yaml
   allowlist_external_dirs:
     - "/config/downloads"
+    - "/config/www"
 
 # Configure a default setup of Home Assistant (frontend, api, etc)
 default_config:
