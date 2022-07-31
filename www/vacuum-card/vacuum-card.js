@@ -1,1 +1,0 @@
-../../submodules/vacuum-card/src/vacuum-card.js

@@ -1,8 +1,8 @@
 mode: yaml
 resources:
-  - url: /local/lg-remote-control/lg-remote-control.js
+  - url: /local/lg-remote-control.js
     type: module
   - url: /local/multiple-entity-row/multiple-entity-row.js?v=4.2.0
     type: module
-  - url: /local/vacuum-card/vacuum-card.js
+  - url: /local/vacuum-card.js
     type: module
