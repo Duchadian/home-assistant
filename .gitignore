@@ -13,3 +13,5 @@ webostv.conf
 *.log.*
 venv
 downloads
+custom_components/hacs
+www/community/**/*.gz

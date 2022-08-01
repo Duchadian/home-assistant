@@ -2,10 +2,3 @@
 	path = submodules/afvalwijzer
 	url = git@github.com:xirixiz/homeassistant-afvalwijzer.git
 	branch = 2022.02.03
-[submodule "submodules/lg-webos-remote"]
-	path = submodules/lg-webos-remote
-	url = git@github.com:madmicio/LG-WebOS-Remote-Control.git
-[submodule "submodules/vacuum-card"]
-	path = submodules/vacuum-card
-	url = https://github.com/denysdovhan/vacuum-card.git
-	branch = v2.6.3
