@@ -1,0 +1,12 @@
+alias: Vacuum Going Home
+id: 'vacuum_going_home'
+trigger:
+  - platform: state
+    entity_id: vacuum.roborock_vacuum_a38
+action:
+  - service: notify.matrix_home
+    data:
+      title: "Hello from George!"
+      message: >
+        I am doing something! My state changed from {{ trigger.from_state.state }}
+        to {{ trigger.to_state.state }}!
