@@ -1,6 +1,8 @@
 - type: entities
   entities:
     - entity: cover.garage_door
+    - entity: script.open_carport
+    - entity: script.close_carport
     - type: section
     - entity: light.hallway
       name: "Hallway light"
