@@ -20,7 +20,7 @@ homeassistant:
 default_config:
 
 # custom stuff
-lovelace: !include lovelace/lovelace.yaml
+#lovelace: !include lovelace/lovelace.yaml
 
 shopping_list:
 python_script:
