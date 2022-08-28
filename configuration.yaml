@@ -67,3 +67,5 @@ downloader:
 
 logger:
   default: critical
+  logs:
+    homeassistant.components.kodi: debug
