@@ -6,5 +6,6 @@ realm: pve
 nodes:
   - node: proxmox
     vms:
-      - 100
       - 101
+    containers:
+      - 104
