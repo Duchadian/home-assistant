@@ -21,6 +21,8 @@ default_config:
 
 # custom stuff
 #lovelace: !include lovelace/lovelace.yaml
+lovelace:
+  mode: storage
 
 shopping_list:
 python_script:
