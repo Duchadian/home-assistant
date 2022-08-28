@@ -1,9 +1,0 @@
-mode: yaml
-resources:
-  - url: /hacsfiles/LG-WebOS-Remote-Control/lg-remote-control.js
-    type: module
-  - url: /local/multiple-entity-row/multiple-entity-row.js?v=4.2.0
-    type: module
-  - url: /hacsfiles/vacuum-card/vacuum-card.js
-    type: module
-                 

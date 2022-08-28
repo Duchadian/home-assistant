@@ -1,7 +1,0 @@
-title: Vacuum
-path: vacuum
-icon: mdi:robot-vacuum
-panel: true
-cards:
-  - type: 'custom:vacuum-card'
-    entity: vacuum.roborock_vacuum_a38

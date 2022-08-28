@@ -1,8 +1,0 @@
-title: Home
-icon: hass:home
-path: home
-badges:
-  - entity: person.tim
-  - entity: person.sabine
-cards:
-  !include_dir_merge_list ../cards/home/
