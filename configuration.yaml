@@ -26,7 +26,7 @@ lovelace:
   mode: storage
 
 frontend:
-  themes: !include_dir_named themes
+  themes: !include_dir_merge_named themes
 
 shopping_list:
 python_script:
