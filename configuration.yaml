@@ -31,6 +31,7 @@ http:
   use_x_forwarded_for: true
   trusted_proxies:
     - 172.30.33.0/24
+    - 192.168.1.200
 
 # Discover some devices automatically
 discovery:
@@ -68,5 +69,12 @@ downloader:
 
 logger:
   default: critical
-  logs:
-    homeassistant.components.kodi: debug
+
+google_assistant:
+  project_id: 32098
+  service_account: !include google_project.json
+  report_state: true
+  exposed_domains:
+    - switch
+    - light
+    - cover

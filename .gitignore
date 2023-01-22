@@ -13,5 +13,7 @@ webostv.conf
 *.log.*
 venv
 downloads
-custom_components/hacs
+custom_components
+themes
 www/community/**/*.gz
+google_project.json
