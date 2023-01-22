@@ -25,6 +25,9 @@ default_config:
 lovelace:
   mode: storage
 
+frontend:
+  themes: !include_dir_named themes
+
 shopping_list:
 python_script:
 http:
