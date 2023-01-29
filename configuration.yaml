@@ -6,6 +6,7 @@ homeassistant:
   longitude: !secret home_long
   # Impacts weather/sunrise data (altitude above sea level in meters)
   elevation: !secret home_el
+  external_url: !secret base_url
   # metric for Metric, imperial for Imperial
   unit_system: metric
   country: NL
