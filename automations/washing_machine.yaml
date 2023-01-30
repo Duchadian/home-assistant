@@ -1,0 +1,14 @@
+- id: '1674997897336'
+  alias: Washing machine
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - sensor.washing_machine_washer_job_state
+    to: finish
+  condition: []
+  action:
+  - service: notify.matrix_home
+    data:
+      message: The washing machine is done!
+  mode: single

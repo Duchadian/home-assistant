@@ -15,5 +15,5 @@ venv
 downloads
 custom_components
 themes
-www/community/**/*.gz
+www
 google_project.json
