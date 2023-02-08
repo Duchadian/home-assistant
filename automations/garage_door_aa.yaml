@@ -1,0 +1,28 @@
+- id: '1675852157781'
+  alias: Open Garage door on Android Auto connection
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - binary_sensor.fp4_android_auto
+    from: 'off'
+    to: 'on'
+  condition:
+  - condition: zone
+    entity_id: device_tracker.fp4
+    zone: zone.home
+  action:
+  - service: cover.open_cover
+    data: {}
+    target:
+      entity_id: cover.garage_door
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 30
+      milliseconds: 0
+  - service: cover.close_cover
+    data: {}
+    target:
+      entity_id: cover.garage_door
+  mode: single
