@@ -1,0 +1,42 @@
+id: '1676472716099'
+alias: 'Open/Close Garage Door when car arrives '
+description: ''
+trigger:
+- platform: device
+  device_id: 807b6a0091bb2bd9d4e07cb68e9179c0
+  domain: device_tracker
+  entity_id: device_tracker.fp4
+  type: enters
+  zone: zone.home
+condition:
+- condition: and
+  conditions:
+  - type: is_on
+    condition: device
+    device_id: 807b6a0091bb2bd9d4e07cb68e9179c0
+    entity_id: binary_sensor.fp4_android_auto
+    domain: binary_sensor
+  - condition: state
+    entity_id: input_boolean.open_carport_when_home
+    state: 'on'
+action:
+- service: cover.open_cover
+  data: {}
+  target:
+    entity_id: cover.garage_door
+- wait_for_trigger:
+  - type: turned_off
+    platform: device
+    device_id: 807b6a0091bb2bd9d4e07cb68e9179c0
+    entity_id: binary_sensor.fp4_android_auto
+    domain: binary_sensor
+  timeout:
+    hours: 0
+    minutes: 1
+    seconds: 30
+    milliseconds: 0
+- service: cover.close_cover
+  data: {}
+  target:
+    entity_id: cover.garage_door
+mode: single

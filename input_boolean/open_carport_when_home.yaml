@@ -1,0 +1,3 @@
+name: Open Garage Door in Home zone
+initial: 'on'
+icon: mdi:car-cog
