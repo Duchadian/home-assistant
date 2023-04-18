@@ -45,5 +45,5 @@ entities:
     friendly_name: Bedroom lights
     icon: mdi:lightbulb-group
     supported_features: 0
-    state: 'off'
+    state: 'on'
 icon: mdi:moon-waning-crescent

@@ -59,7 +59,6 @@ light: !include_dir_list lights
 scene: !include_dir_list scenes
 script: !include_dir_named scripts
 switch: !include_dir_list switches
-timer: !include_dir_named timer
 
 # integrations
 notify: !include_dir_list integrations/notify
