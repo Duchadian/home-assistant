@@ -39,4 +39,17 @@ action:
   data: {}
   target:
     entity_id: cover.garage_door
+- condition: and
+  conditions:
+    - condition: sun
+      after: sunset
+      after_offset: "-01:00:00"
+- service: light.turn_on
+  data:
+    color_temp: 500
+    brightness_pct: 5
+  target:
+    entity_id:
+      - light.dining_table
+      - light.hallway
 mode: single
