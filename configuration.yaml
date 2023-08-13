@@ -37,9 +37,6 @@ http:
     - 172.30.33.0/24
     - 192.168.1.200
 
-# Discover some devices automatically
-discovery:
-
 # Sensors
 sensor: !include_dir_list sensors
 
