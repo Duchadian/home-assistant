@@ -70,11 +70,3 @@ downloader:
 logger:
   default: critical
 
-google_assistant:
-  project_id: 32098
-  service_account: !include google_project.json
-  report_state: true
-  exposed_domains:
-    - switch
-    - light
-    - cover
