@@ -61,7 +61,6 @@ switch: !include_dir_list switches
 notify: !include_dir_list integrations/notify
 utility_meter: !include_dir_named integrations/utility_meter
 proxmoxve: !include_dir_list integrations/proxmoxve
-matrix: !include integrations/matrix.yaml
 influxdb: !include integrations/influxdb.yaml
 
 downloader:
@@ -69,4 +68,3 @@ downloader:
 
 logger:
   default: critical
-
