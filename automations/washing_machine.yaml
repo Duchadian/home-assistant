@@ -8,7 +8,7 @@ trigger:
   to: finish
 condition: []
 action:
-- service: notify.matrix_home
+- service: notify.mobile_app_fp4
   data:
     message: The washing machine is done!
 mode: single

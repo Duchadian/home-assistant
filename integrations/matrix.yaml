@@ -1,6 +1,0 @@
-homeserver: !secret matrix_homeserver
-username: !secret matrix_username
-password: !secret matrix_password
-rooms:
-  - !secret matrix_home_room
-  - !secret matrix_test_room

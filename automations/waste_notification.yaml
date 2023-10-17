@@ -14,10 +14,6 @@ condition:
     - condition: template
       value_template: "{{ states('sensor.afvalwijzer_tomorrow') != 'Geen' }}"
 action:
-  - service: notify.matrix_home
-    data:
-      title: "Trash"
-      message: 'Tomorrow is trash day! Trash type {{ states.sensor.afvalwijzer_tomorrow.state }} will be picked up.'
   - service: notify.mobile_app_fp4
     data:
       title: "Trash"
