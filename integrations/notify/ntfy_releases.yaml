@@ -1,0 +1,11 @@
+name: ntfy
+platform: rest
+method: POST_JSON
+authentication: basic
+username: !secret ntfy_username
+password: !secret ntfy_password
+data:
+  topic: releases
+title_param_name: title
+message_param_name: message
+resource: https://ntfy.duchs.nl

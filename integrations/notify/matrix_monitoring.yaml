@@ -1,3 +1,0 @@
-name: matrix_monitoring
-platform: matrix
-default_room: !secret matrix_monitoring_room
