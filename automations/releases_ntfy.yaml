@@ -1,0 +1,14 @@
+id: 'releases_ntfy'
+alias: Notify github releases
+description: ""
+trigger:
+  - platform: event
+    event_type: feedreader
+    event_data: {}
+condition: []
+action:
+  - service: notify.ntfy_releases
+    data:
+      message: "{{ trigger.event.data.content }}"
+      title: "{{ trigger.event.data.title }}"
+mode: single
