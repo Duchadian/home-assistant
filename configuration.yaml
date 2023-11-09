@@ -58,6 +58,7 @@ script: !include_dir_named scripts
 switch: !include_dir_list switches
 
 # integrations
+feedreader: !include integrations/feedreader.yaml
 notify: !include_dir_list integrations/notify
 utility_meter: !include_dir_named integrations/utility_meter
 proxmoxve: !include_dir_list integrations/proxmoxve
