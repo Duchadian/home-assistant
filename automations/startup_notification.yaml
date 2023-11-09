@@ -1,0 +1,12 @@
+id: 'startup_notification'
+alias: Send startup notification
+description: ''
+trigger:
+- platform: event
+  event_type: homeassistant_started
+condition: []
+action:
+- service: notify.ntfy_monitoring
+  data:
+    message: Home Assistant has started!
+mode: single

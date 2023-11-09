@@ -1,0 +1,12 @@
+id: 'shutdown_notification'
+alias: Send shutdown notification
+description: ''
+trigger:
+- platform: event
+  event_type: homeassistant_stop
+condition: []
+action:
+- service: notify.ntfy_monitoring
+  data:
+    message: Home Assistant is shutting down!
+mode: single
