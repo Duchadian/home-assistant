@@ -3,7 +3,7 @@ alias: Send startup notification
 description: ''
 trigger:
 - platform: event
-  event_type: homeassistant_started
+  event_type: homeassistant_start
 condition: []
 action:
 - service: notify.ntfy_monitoring

@@ -8,7 +8,7 @@ trigger:
   to: finish
 condition: []
 action:
-- service: notify.mobile_app_fp4
+- service: notify.ntfy_home
   data:
     message: The washing machine is done!
 mode: single
