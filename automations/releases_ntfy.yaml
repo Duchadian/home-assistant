@@ -9,6 +9,6 @@ condition: []
 action:
   - service: notify.ntfy_releases
     data:
-      message: "{{ trigger.event.data.summary }}"
+      message: "{{ trigger.event.data.link }}"
       title: "{{ trigger.event.data.title }}"
 mode: queued
