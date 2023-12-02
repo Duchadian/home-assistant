@@ -1,4 +1,4 @@
 urls:
   - https://github.com/advplyr/audiobookshelf/releases.atom
-  - https://github.com/traefik/traefik/releases.atom
+  - https://github.com/rmcrackan/Libation/releases.atom
 max_entries: 1
