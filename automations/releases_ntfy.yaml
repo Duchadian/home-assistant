@@ -11,4 +11,9 @@ action:
     data:
       message: "{{ trigger.event.data.link }}"
       title: "{{ trigger.event.data.title }}"
+  - service: todo.add_item
+    data:
+      item: '{{ trigger.event.data.link }}'
+    target:
+      entity_id: todo.updates
 mode: queued
