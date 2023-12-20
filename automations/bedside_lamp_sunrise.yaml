@@ -1,0 +1,11 @@
+id: '1703019050838'
+alias: Wake-up bedside light
+description: ''
+use_blueprint:
+  path: sbyx/wake-up-light-alarm-with-sunrise-effect.yaml
+  input:
+    light_entity: light.bedside_lamp_light
+    timestamp_sensor: sensor.fp4_next_alarm_2
+    manual_time: 08:15:00
+    check_entity: device_tracker.fp4
+    end_brightness: 141
