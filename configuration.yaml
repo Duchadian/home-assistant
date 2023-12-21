@@ -39,7 +39,6 @@ http:
 
 # Sensors
 sensor: !include_dir_list sensors
-
 wake_on_lan:
 system_health:
 media_extractor:
