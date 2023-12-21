@@ -12,7 +12,7 @@ condition:
       after: '18:00:00'
       before: '23:00:00'
     - condition: template
-      value_template: "{{ states('sensor.afvalwijzer_tomorrow') != 'Geen' }}"
+      value_template: "{{ states('sensor.afvalwijzer_tomorrow') != 'geen' }}"
 action:
   - service: notify.mobile_app_fp4
     data:
