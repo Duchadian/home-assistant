@@ -5,7 +5,10 @@ trigger:
   - platform: event
     event_type: feedreader
     event_data: {}
-condition: []
+condition:
+  # exclude neovim prerelease
+  - condition: template
+    value_template: "{{ ('prerelease' in trigger.event.title) == false }}"
 action:
   - service: notify.ntfy_releases
     data:
