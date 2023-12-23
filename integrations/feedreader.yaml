@@ -2,4 +2,5 @@ urls:
   - https://github.com/advplyr/audiobookshelf/releases.atom
   - https://github.com/rmcrackan/Libation/releases.atom
   - https://github.com/neovim/neovim/releases.atom
+  - https://nixos.org/blog/announcements-rss.xml
 max_entries: 1
