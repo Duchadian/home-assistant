@@ -8,4 +8,4 @@ use_blueprint:
     timestamp_sensor: sensor.fp4_next_alarm_2
     manual_time: 08:15:00
     check_entity: device_tracker.fp4
-    end_brightness: 141
+    end_brightness: 51
