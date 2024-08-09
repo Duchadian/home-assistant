@@ -45,7 +45,6 @@ media_extractor:
   default_query: best
 
 automation: !include_dir_list automations
-binary_sensor: !include_dir_list binary_sensors
 cover: !include_dir_list covers
 group: !include groups.yaml
 input_boolean: !include_dir_named input_boolean
