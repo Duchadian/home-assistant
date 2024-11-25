@@ -44,7 +44,8 @@ system_health:
 media_extractor:
   default_query: best
 
-automation: !include_dir_list automations
+automation manual: !include_dir_list automations
+automation ui: !include automations.yaml
 cover: !include_dir_list covers
 group: !include groups.yaml
 input_boolean: !include_dir_named input_boolean
