@@ -1,0 +1,228 @@
+- id: '1760264521110'
+  alias: Open Garage door on Android Auto connection
+  description: ''
+  triggers:
+  - entity_id:
+    - binary_sensor.fp4_android_auto
+    from: 'off'
+    to: 'on'
+    trigger: state
+  conditions:
+  - condition: zone
+    entity_id: device_tracker.fp4
+    zone: zone.home
+  actions:
+  - data: {}
+    target:
+      entity_id: cover.garage_door
+    action: cover.open_cover
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 30
+      milliseconds: 0
+  - data: {}
+    target:
+      entity_id: cover.garage_door
+    action: cover.close_cover
+  mode: single
+- id: '1760264603345'
+  alias: Waste has not been moved
+  description: ''
+  triggers:
+  - hours: /1
+    trigger: time_pattern
+  conditions:
+  - condition: and
+    conditions:
+    - condition: state
+      entity_id: input_boolean.waste_moved
+      state: 'off'
+    - condition: time
+      after: '18:00:00'
+      before: '23:00:00'
+    - condition: template
+      value_template: '{{ states(''sensor.afvalwijzer_tomorrow'') != ''geen'' }}'
+  actions:
+  - data:
+      title: Trash
+      message: Tomorrow is trash day! Trash type {{ states.sensor.afvalwijzer_tomorrow.state
+        }} will be picked up.
+    action: notify.mobile_app_fp4
+  mode: single
+- id: '1760264611704'
+  alias: Washing machine
+  description: ''
+  triggers:
+  - entity_id:
+    - sensor.washing_machine_washer_job_state
+    to: finish
+    trigger: state
+  conditions: []
+  actions:
+  - data:
+      message: The washing machine is done!
+    action: notify.ntfy_home
+  mode: single
+- id: '1760264621854'
+  alias: Wake-up bedside light
+  description: ''
+  triggers:
+  - minutes: '*'
+    trigger: time_pattern
+  conditions: []
+  actions:
+  - wait_template: '{{sensor == ''none'' or as_timestamp(states(sensor), None) !=
+      None}}'
+  - wait_template: '{{0 < as_timestamp(states(sensor) if sensor != ''none'' else states(''sensor.date'')
+      ~ '' '' ~ manual_time) - as_timestamp(states(''sensor.date_time_iso'')) <= float(seconds)
+      and states(check_entity) in [''unknown'', ''on'', ''home'']}}'
+  - choose: []
+    default: []
+  - condition: template
+    value_template: '{{sensor == ''none'' or as_timestamp(states(sensor), None) !=
+      None}}'
+  - condition: template
+    value_template: '{{0 < as_timestamp(states(sensor) if sensor != ''none'' else
+      states(''sensor.date'') ~ '' '' ~ manual_time) - as_timestamp(now()) <= float(seconds)
+      and states(check_entity) in [''unknown'', ''on'', ''home'']}}'
+  - choose:
+    - conditions:
+      - condition: template
+        value_template: '{{state_attr(light_entity, ''min_mireds'') != None}}'
+      sequence:
+      - data:
+          brightness: '{{start_brightness}}'
+          color_temp: '{{start_mired}}'
+        entity_id: light.bedside_lamp_light
+        action: light.turn_on
+    default:
+    - data:
+        brightness: '{{start_brightness}}'
+      entity_id: light.bedside_lamp_light
+      action: light.turn_on
+  - repeat:
+      while:
+      - condition: template
+        value_template: '{{sensor == ''none'' or as_timestamp(states(sensor), None)
+          != None}}'
+      - condition: template
+        value_template: '{{0 < as_timestamp(states(sensor) if sensor != ''none'' else
+          states(''sensor.date'') ~ '' '' ~ manual_time) - as_timestamp(now()) <=
+          float(seconds)}}'
+      sequence:
+      - delay: '{{tick_time}}'
+      - choose:
+        - conditions:
+          - condition: template
+            value_template: '{{0 < state_attr(light_entity, ''brightness'') | int(0)
+              < end_brightness | int}}'
+          - condition: template
+            value_template: '{{sensor == ''none'' or as_timestamp(states(sensor),
+              None) != None}}'
+          - condition: template
+            value_template: '{{0 < as_timestamp(states(sensor) if sensor != ''none''
+              else states(''sensor.date'') ~ '' '' ~ manual_time) - as_timestamp(now())
+              <= float(seconds)}}'
+          sequence:
+          - choose:
+            - conditions:
+              - condition: template
+                value_template: '{{state_attr(light_entity, ''min_mireds'') != None}}'
+              sequence:
+              - data:
+                  brightness: '{{(float(end_brightness) - (float(range_brightness)
+                    * (as_timestamp(states(sensor) if sensor != ''none'' else states(''sensor.date'')
+                    ~ '' '' ~ manual_time) - as_timestamp(now())) / float(seconds)))
+                    | int(0)}}'
+                  color_temp: '{{(float(end_mired) + (float(start_mired) - float(end_mired))
+                    * ((as_timestamp(states(sensor) if sensor != ''none'' else states(''sensor.date'')
+                    ~ '' '' ~ manual_time) - as_timestamp(now())) / float(seconds)))
+                    | int(0)}}'
+                entity_id: light.bedside_lamp_light
+                action: light.turn_on
+            default:
+            - data:
+                brightness: '{{(float(end_brightness) - (float(range_brightness) *
+                  (as_timestamp(states(sensor) if sensor != ''none'' else states(''sensor.date'')
+                  ~ '' '' ~ manual_time) - as_timestamp(now())) / float(seconds)))
+                  | int(0)}}'
+              entity_id: light.bedside_lamp_light
+              action: light.turn_on
+  - choose: []
+    default: []
+  mode: single
+  variables:
+    light_entity: light.bedside_lamp_light
+    sensor: sensor.fp4_next_alarm_2
+    sunrise_duration: 25
+    start_brightness: 1
+    end_brightness: 51
+    range_brightness: '{{float(end_brightness)-float(start_brightness)}}'
+    manual_time: 08:15:00
+    seconds: '{{float(sunrise_duration) * 60}}'
+    min_mired: 0
+    start_mired: '{{state_attr(light_entity, ''max_mireds'')}}'
+    end_mired: '{{[state_attr(light_entity, ''min_mireds'')|int(0), min_mired|int(0)]|max}}'
+    tick_time: '{{float(seconds) / float(range_brightness)}}'
+    check_entity: device_tracker.fp4
+  max_exceeded: silent
+- id: '1760264634662'
+  alias: Send startup notification
+  description: ''
+  triggers:
+  - event_type: homeassistant_start
+    trigger: event
+  conditions: []
+  actions:
+  - data:
+      message: Home Assistant has started!
+    action: notify.ntfy_monitoring
+  mode: single
+- id: '1760264645833'
+  alias: Send shutdown notification
+  description: ''
+  triggers:
+  - event_type: homeassistant_stop
+    trigger: event
+  conditions: []
+  actions:
+  - data:
+      message: Home Assistant is shutting down!
+    action: notify.ntfy_monitoring
+  mode: single
+- id: '1760264653620'
+  alias: Reset waste notification
+  description: ''
+  triggers:
+  - entity_id: input_boolean.waste_moved
+    to: 'on'
+    for:
+      hours: 12
+    trigger: state
+  conditions: []
+  actions:
+  - entity_id: input_boolean.waste_moved
+    action: input_boolean.turn_off
+  mode: single
+- id: '1760264678424'
+  alias: Notify github releases
+  description: ''
+  triggers:
+  - event_type: feedreader
+    event_data: {}
+    trigger: event
+  conditions:
+  - condition: template
+    value_template: '{{ (''prerelease'' in trigger.event.data.title) == false }}'
+  actions:
+  - data:
+      message: '{{ trigger.event.data.link }}'
+      title: '{{ trigger.event.data.title }}'
+    action: notify.ntfy_releases
+  - data:
+      item: '{{ trigger.event.data.link }}'
+    target:
+      entity_id: todo.updates
+    action: todo.add_item
+  mode: queued
