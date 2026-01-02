@@ -1,0 +1,7 @@
+sensor:
+  - unit_of_measurement: kW
+    default_entity_id: sensor.solaredge_current_power_kw
+    icon: mdi:solar_power
+    state: '{{ (states(''sensor.solaredge_current_power'') | float / 1000) | round(2)
+      }}'
+    name: solaredge_current_power_kw

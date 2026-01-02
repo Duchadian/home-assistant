@@ -1,8 +1,0 @@
-platform: template
-covers:
-  garage_door:
-    friendly_name: "Garage Door"
-    open_cover:
-      service: script.open_carport
-    close_cover:
-      service: script.close_carport

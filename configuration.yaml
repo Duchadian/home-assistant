@@ -40,6 +40,7 @@ http:
 
 # Sensors
 sensor: !include_dir_list sensors
+template: !include_dir_list templates
 wake_on_lan:
 system_health:
 media_extractor:
@@ -47,7 +48,6 @@ media_extractor:
 
 automation manual: !include_dir_list automations
 automation ui: !include automations.yaml
-cover: !include_dir_list covers
 group: !include groups.yaml
 input_boolean: !include_dir_named input_boolean
 input_number: !include_dir_named input_number
