@@ -29,7 +29,6 @@ lovelace:
 frontend:
   themes: !include_dir_merge_named themes
 
-shopping_list:
 python_script:
 http:
   use_x_forwarded_for: true
