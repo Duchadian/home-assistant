@@ -30,12 +30,6 @@ frontend:
   themes: !include_dir_merge_named themes
 
 python_script:
-http:
-  use_x_forwarded_for: true
-  trusted_proxies:
-    - 172.30.33.0/24
-    - 192.168.1.254
-    - 192.168.1.120
 
 # Sensors
 sensor: !include_dir_list sensors
@@ -60,7 +54,6 @@ switch: !include_dir_list switches
 feedreader: !include integrations/feedreader.yaml
 notify: !include_dir_list integrations/notify
 utility_meter: !include_dir_named integrations/utility_meter
-influxdb: !include integrations/influxdb.yaml
 
 downloader:
   download_dir: downloads
